@@ -29,22 +29,31 @@ def login(driver, username, password):
     passwordField.send_keys(password)
 
     passwordField.send_keys(Keys.RETURN)
+    return
 
 def openAttendanceForm(driver):
     # assert main page
+    time.sleep(0.5)
     mainPage = driver.find_element_by_class_name("htBlock-adjastableTableF_inner")
     # TODO: find today's row
     # rows of day .htBlock-scrollTable_day -> find p .text
     return
 
-# TODO: assert attendence form #recording_timestamp_table
+def enterAttendance(driver):
+    # TODO: assert attendence form #recording_timestamp_table
+    time.sleep(0.5)
+    # TODO: enter start time
+    # TODO: enter end time
+    return
 
 def main():
     username, password = read_input()
     driver = setup()
     login(driver, username, password)
     openAttendanceForm(driver)
-    time.sleep(10)
+    enterAttendance(driver)
+    time.sleep(1)
     driver.close()
 
-main()
+if __name__ == "__main__":
+    main()
