@@ -1,3 +1,4 @@
+import utils
 import time
 from getpass import getpass
 from selenium import webdriver
@@ -31,12 +32,35 @@ def login(driver, username, password):
     passwordField.send_keys(Keys.RETURN)
     return
 
+def findTodayRowIndex(driver):
+    dayRows = driver.find_elements_by_class_name("htBlock-scrollTable_day")
+    dayElements = []
+    for r in dayRows:
+        dayElements.append(r.find_element_by_tag_name("p"))
+    dayTexts = []
+    for p in dayElements:
+        dayTexts.append(p.text)
+    todayText = utils.generateTodayText()
+    return dayTexts.index(todayText)
+
+def findOpenAttendanceFormButtonIndex(todayButtonOptions):
+    optionTexts = []
+    for op in todayButtonOptions:
+        optionTexts.append(op.text)
+    return optionTexts.index("打刻申請")
+
 def openAttendanceForm(driver):
     # assert main page
     time.sleep(0.5)
     mainPage = driver.find_element_by_class_name("htBlock-adjastableTableF_inner")
+
     # TODO: find today's row
-    # rows of day .htBlock-scrollTable_day -> find p .text
+    todayRowIndex = findTodayRowIndex(driver)
+    todayButton = driver.find_elements_by_class_name("htBlock-selectOther")[todayRowIndex]
+    todayButtonOptions = todayButton.find_elements_by_tag_name("option")
+    openFormOptionIndex = findOpenAttendanceFormButtonIndex(todayButtonOptions)
+    openFormButton = todayButtonOptions[openFormOptionIndex]
+    openFormButton.click()
     return
 
 def enterAttendance(driver):
