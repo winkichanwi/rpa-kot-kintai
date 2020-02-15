@@ -74,12 +74,9 @@ def open_timesheet_form(driver):
 ### Enter timesheet
 def is_application_pending(driver):
     # TODO: define has_pending_application more accurately by history content
-    has_pending_application = False
-    try:
-        has_pending_application = driver.find_element_by_class_name("specific-table_1000_wrap")
-    except NoSuchElementException:
-        has_pending_application = False
-    return has_pending_application
+    pending_application_table = driver.find_elements_by_class_name("specific-table_1000_wrap")
+    has_pending_application = len(pending_application_table) > 0
+    return len(pending_application_table) > 0
 
 def find_selected_record_type_option_elements(record_type_menu_elements):
     record_type_option_elements = []
@@ -166,13 +163,20 @@ def main(argv):
     opts, args, headless = utils.verify_options(argv)
     username, password = read_input()
     driver = setup(headless)
-    login(driver, username, password)
-    open_timesheet_form(driver)
-    enter_timesheet(driver, opts, args)
-    print("Complete timesheet application.")
-    if not(headless):
-        time.sleep(5)
-    driver.close()
+    try:
+        login(driver, username, password)
+        open_timesheet_form(driver)
+        enter_timesheet(driver, opts, args)
+    except NoSuchElementException as e:
+        print("Element not found.\nUI may be changed, please modify code according to the change.\n", e)
+    except:
+        print("Unexpected error.\n", sys.exc_info()[0])
+    else:
+        print("Complete timesheet application.")
+        if not(headless):
+            time.sleep(5)
+    finally:
+        driver.close()
 
 if __name__ == "__main__":
     main(sys.argv[1:])
