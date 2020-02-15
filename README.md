@@ -34,5 +34,7 @@ $ python auto-kintai.py -e 19:30 --headless
 ```
 
 実行の際に `username` と `password` が聞かれます
+
 `username` は先頭に `wtv3` を付いていることと想定され、社員番号を入力するだけでOK
+
 他のユースケースの実行方法は `--help` で参考してください
