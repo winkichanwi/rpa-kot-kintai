@@ -41,12 +41,9 @@ def login(driver, username, password):
 
 ### Open form
 def find_today_row_index(day_rows):
-    day_elements = []
-    for r in day_rows:
-        day_elements.append(r.find_element_by_tag_name("p"))
     day_texts = []
-    for p in day_elements:
-        day_texts.append(p.text)
+    for r in day_rows:
+        day_texts.append(r.find_element_by_tag_name("p").text)
     today_text = utils.generate_today_text()
     return day_texts.index(today_text)
 
@@ -60,7 +57,7 @@ def open_timesheet_form(driver):
     # assert timesheet page
     time.sleep(0.5)
     timesheet_page = driver.find_element_by_class_name("htBlock-adjastableTableF_inner")
-    print("Logged in to King of Time")
+    print("Logged in to King of Time.")
 
     day_rows = driver.find_elements_by_class_name("htBlock-scrollTable_day")
     today_row_index = find_today_row_index(day_rows)
@@ -72,11 +69,16 @@ def open_timesheet_form(driver):
     return
 
 ### Enter timesheet
-def is_application_pending(driver):
-    # TODO: define has_pending_application more accurately by history content
+def is_application_pending(driver, record_type):
+    has_pending_application = False
     pending_application_table = driver.find_elements_by_class_name("specific-table_1000_wrap")
-    has_pending_application = len(pending_application_table) > 0
-    return len(pending_application_table) > 0
+    if len(pending_application_table) > 0:
+        pending_record_elements = pending_application_table[0].find_elements_by_tag_name("td")
+        for e in pending_record_elements:
+            has_pending_application = (record_type.value in e.text) or has_pending_application
+    else:
+        has_pending_application = False
+    return has_pending_application
 
 def find_selected_record_type_option_elements(record_type_menu_elements):
     record_type_option_elements = []
@@ -94,7 +96,7 @@ def is_specific_record_type_selected(record_type_menu_elements, record_type):
     return is_record_type_selected
 
 def is_specific_record_type_applied(driver, record_type_menu_elements, record_type):
-    has_pending_application = is_application_pending(driver)
+    has_pending_application = is_application_pending(driver, record_type)
     is_record_type_selected = is_specific_record_type_selected(record_type_menu_elements, record_type)
     return has_pending_application or is_record_type_selected
 
@@ -144,13 +146,13 @@ def enter_timesheet(driver, opts, args):
                 if should_enter_start_of_work:
                     input_records[RecordType.START_OF_WORK] = arg
                 else:
-                    print("Start of work applied already.")
+                    print("Start of work is applied already.")
             elif opt in ("-e", "--end"):
                 # enter end of work
                 if should_enter_end_of_work:
                     input_records[RecordType.END_OF_WORK] = arg
                 else:
-                    print("End of work applied already.")
+                    print("End of work is applied already.")
     if len(input_records) > 0:
         enter_records(driver, record_type_menu_elements, input_records)
     # submit
@@ -170,7 +172,7 @@ def main(argv):
     except NoSuchElementException as e:
         print("Element not found.\nUI may be changed, please modify code according to the change.\n", e)
     except:
-        print("Unexpected error.\n", sys.exc_info()[0])
+        print("Unexpected error.\n", sys.exc_info()[1])
     else:
         print("Complete timesheet application.")
         if not(headless):
