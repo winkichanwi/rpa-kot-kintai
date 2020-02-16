@@ -1,3 +1,4 @@
+# coding=utf-8
 import sys, time
 from datetime import datetime
 from getpass import getpass
