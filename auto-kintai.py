@@ -131,7 +131,8 @@ def enter_timesheet(driver, opts, args):
     should_enter_end_of_work = not(is_specific_record_type_applied(driver, record_type_menu_elements, RecordType.END_OF_WORK))
 
     input_records = {}
-    if len(opts) == 0:
+    should_enter_current_time = (len(opts) == 0) or (len(opts) == 1 and "--headless" in opts)
+    if should_enter_current_time:
         # enter current time
         current_time_text = datetime.now().strftime("%H:%M")
         if should_enter_start_of_work:
