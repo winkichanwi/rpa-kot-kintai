@@ -121,7 +121,7 @@ def enter_records(driver, record_type_menu_elements, records):
         i += 1
     return
 
-def enter_timesheet(driver, opts, args):
+def enter_timesheet(driver, opts):
     # assert timesheet form
     time.sleep(0.5)
     timesheet_form = driver.find_elements_by_id("recording_timestamp_table")
@@ -131,8 +131,22 @@ def enter_timesheet(driver, opts, args):
     should_enter_end_of_work = not(is_specific_record_type_applied(driver, record_type_menu_elements, RecordType.END_OF_WORK))
 
     input_records = {}
-    specify_time_options = ["-s", "--start", "-e", "--end"]
-    should_enter_current_time = len(set(specify_time_options) & set(opts)) == 0
+    should_enter_current_time = True
+    for opt, arg in opts:
+        if opt in ("-s", "--start"):
+            should_enter_current_time = False
+            # enter start of work
+            if should_enter_start_of_work:
+                input_records[RecordType.START_OF_WORK] = arg
+            else:
+                print("Start of work is applied already.")
+        elif opt in ("-e", "--end"):
+            should_enter_current_time = False
+            # enter end of work
+            if should_enter_end_of_work:
+                input_records[RecordType.END_OF_WORK] = arg
+            else:
+                print("End of work is applied already.")
     if should_enter_current_time:
         # enter current time
         current_time_text = datetime.now().strftime("%H:%M")
@@ -142,25 +156,11 @@ def enter_timesheet(driver, opts, args):
             input_records[RecordType.END_OF_WORK] = current_time_text
         else:
             print("Today's timesheet is applied already.")
-    else:
-        for opt, arg in opts:
-            if opt in ("-s", "--start"):
-                # enter start of work
-                if should_enter_start_of_work:
-                    input_records[RecordType.START_OF_WORK] = arg
-                else:
-                    print("Start of work is applied already.")
-            elif opt in ("-e", "--end"):
-                # enter end of work
-                if should_enter_end_of_work:
-                    input_records[RecordType.END_OF_WORK] = arg
-                else:
-                    print("End of work is applied already.")
     if len(input_records) > 0:
         enter_records(driver, record_type_menu_elements, input_records)
     # submit
     submit_button = driver.find_element_by_class_name("htBlock-buttonSave")
-    submit_button.click()
+    # submit_button.click()
     return
 
 ### Main
@@ -171,7 +171,7 @@ def main(argv):
     try:
         login(driver, username, password)
         open_timesheet_form(driver)
-        enter_timesheet(driver, opts, args)
+        enter_timesheet(driver, opts)
     except NoSuchElementException as e:
         print("Element not found.\nUI may be changed, please modify code according to the change.\n", e)
     except:

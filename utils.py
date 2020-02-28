@@ -29,4 +29,4 @@ def verify_options(argv):
                 print("Wrong time format. Please see usage.\n")
                 print(constants.USAGE)
                 sys.exit(2)
-    return (opts, args, headless)
+    return (opts, headless)
