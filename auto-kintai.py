@@ -160,7 +160,7 @@ def enter_timesheet(driver, opts):
         enter_records(driver, record_type_menu_elements, input_records)
     # submit
     submit_button = driver.find_element_by_class_name("htBlock-buttonSave")
-    # submit_button.click()
+    submit_button.click()
     return
 
 ### Main
