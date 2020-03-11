@@ -165,7 +165,7 @@ def enter_timesheet(driver, opts):
 
 ### Main
 def main(argv):
-    opts, args, headless = utils.verify_options(argv)
+    opts, headless = utils.verify_options(argv)
     username, password = read_input()
     driver = setup(headless)
     try:
