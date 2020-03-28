@@ -12,7 +12,7 @@ def generate_today_text():
 def verify_options(argv):
     headless = False
     try:
-      opts, args = getopt.getopt(argv,"hs:e:",["help","headless","start=","end="])
+      opts, args = getopt.getopt(argv,"hs:e:m:",["help","headless","start=","end="])
     except getopt.GetoptError:
         print(constants.USAGE)
         sys.exit(2)

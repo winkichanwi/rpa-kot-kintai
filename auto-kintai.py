@@ -101,7 +101,7 @@ def is_specific_record_type_applied(driver, record_type_menu_elements, record_ty
     is_record_type_selected = is_specific_record_type_selected(record_type_menu_elements, record_type)
     return has_pending_application or is_record_type_selected
 
-def enter_records(driver, record_type_menu_elements, records):
+def enter_records(driver, record_type_menu_elements, records, message):
     available_row_index = []
     record_type_select_elements = []
     for i in range(len(record_type_menu_elements)):
@@ -110,6 +110,7 @@ def enter_records(driver, record_type_menu_elements, records):
         if select.first_selected_option.text == " --選択してください-- ":
             available_row_index.append(i)
     time_input_elements = driver.find_elements_by_class_name("recording_timestamp_time")
+    message_input_elements = driver.find_elements_by_class_name("htBlock-text")
     i = 0
     for record_type, time_text in records.items():
         row_index = available_row_index[i]
@@ -117,7 +118,8 @@ def enter_records(driver, record_type_menu_elements, records):
         record_type_select_elements[row_index].select_by_visible_text(record_type.value)
         # input time
         time_input_elements[row_index].send_keys(time_text)
-        print("Entered " + record_type.value + " at " + time_text)
+        message_input_elements[row_index].send_keys(message)
+        print("Entered " + record_type.value + " at " + time_text + ", message: " + message + ".")
         i += 1
     return
 
@@ -131,6 +133,7 @@ def enter_timesheet(driver, opts):
     should_enter_end_of_work = not(is_specific_record_type_applied(driver, record_type_menu_elements, RecordType.END_OF_WORK))
 
     input_records = {}
+    input_records_msg = ""
     should_enter_current_time = True
     for opt, arg in opts:
         if opt in ("-s", "--start"):
@@ -147,6 +150,8 @@ def enter_timesheet(driver, opts):
                 input_records[RecordType.END_OF_WORK] = arg
             else:
                 print("End of work is applied already.")
+        elif opt == "-m":
+            input_records_msg = arg
     if should_enter_current_time:
         # enter current time
         current_time_text = datetime.now().strftime("%H:%M")
@@ -157,7 +162,7 @@ def enter_timesheet(driver, opts):
         else:
             print("Today's timesheet is applied already.")
     if len(input_records) > 0:
-        enter_records(driver, record_type_menu_elements, input_records)
+        enter_records(driver, record_type_menu_elements, input_records, input_records_msg)
     # submit
     submit_button = driver.find_element_by_class_name("htBlock-buttonSave")
     submit_button.click()
