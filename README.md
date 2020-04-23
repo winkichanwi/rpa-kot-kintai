@@ -1,20 +1,11 @@
 # README
 
 ## 環境構築
-1. Python (^3.6) with pip
+1. Python (^3.6) with pip / Google Chrome
 
-2. selenium
+2. Install Selenium & google chrome driver binary
 ```
-pip install selenium
-```
-
-3. chromedriver
-
-- ダウンロード: https://sites.google.com/a/chromium.org/chromedriver/downloads
-- `chromedriver` を `PATH` (`/usr/bin` or `/usr/local/bin`) にコピーする
-
-```
-sudo cp ./chromedriver /usr/local/bin
+$ pip install -r requirements.txt
 ```
 
 ## 実行
@@ -38,3 +29,10 @@ $ python auto-kintai.py -e 19:30 --headless
 `username` は先頭に `wtv3` を付いていることと想定され、社員番号を入力するだけでOK
 
 他のユースケースの実行方法は `--help` で参考してください
+
+## troubleshooting
+```
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version XX
+```
+requirements.txt/chromedriver-binary とローカルのGoogle Chromeのバージョンをあわせる必要があります
+https://pypi.org/project/chromedriver-binary/#history
