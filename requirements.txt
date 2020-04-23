@@ -1,0 +1,2 @@
+selenium
+chromedriver-binary==81.0.4044.69.0
