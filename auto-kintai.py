@@ -7,9 +7,11 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 import chromedriver_binary
-
 import utils, constants
 from enums import RecordType
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
 
 def read_input():
     employee_id = input("Enter username: wtv3")
@@ -172,7 +174,14 @@ def enter_timesheet(driver, opts):
 ### Main
 def main(argv):
     opts, headless = utils.verify_options(argv)
-    username, password = read_input()
+
+    load_dotenv(join(dirname(__file__), '.env'))
+    username = os.environ.get("USERNAME","")
+    password = os.environ.get("PASSWORD","")
+    
+    if (not(username) or not(password)):
+        username, password = read_input()
+
     driver = setup(headless)
     try:
         login(driver, username, password)
