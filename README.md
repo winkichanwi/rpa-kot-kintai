@@ -3,7 +3,7 @@
 ## 環境構築
 1. Python (^3.6) with pip / Google Chrome
 
-2. Install Selenium & google chrome driver binary
+2. Install Libraries
 ```
 $ pip install -r requirements.txt
 ```
