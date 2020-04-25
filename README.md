@@ -1,11 +1,22 @@
 # README
+King of Time の打刻入力をCLIから実行するための
+Pythonスクリプトです
 
 ## 環境構築
 1. Python (^3.6) with pip / Google Chrome
 
-2. Install Selenium & google chrome driver binary
+2. Install Libraries
 ```
 $ pip install -r requirements.txt
+```
+## パスワードを保存したい人
+
+`.env.sample` をコピーして `.env` ファイルを作成します、
+King of Time にログインする際のパスワードとIDを保存してください
+
+```.env
+USERNAME=wtv3001234
+PASSWORD=abc123
 ```
 
 ## 実行
@@ -24,8 +35,7 @@ $ python auto-kintai.py -s 09:30
 $ python auto-kintai.py -e 19:30 --headless
 ```
 
-実行の際に `username` と `password` が聞かれます
-
+`.env` を指定していない場合、実行の際に `username` と `password` が聞かれます
 `username` は先頭に `wtv3` を付いていることと想定され、社員番号を入力するだけでOK
 
 他のユースケースの実行方法は `--help` で参考してください
