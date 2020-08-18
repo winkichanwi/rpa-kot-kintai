@@ -1,0 +1,1513 @@
+versions pytest-6.0.1, py-1.9.0, python-3.8.2.final.0
+cwd=/Users/takuro.saito/work/rpa-kot-kintai
+args=('-v', '--debug', '--capture=no')
+
+  pytest_cmdline_main [hook]
+      config: <_pytest.config.Config object at 0x103c4a970>
+    pytest_plugin_registered [hook]
+        plugin: <Session rpa-kot-kintai exitstatus=None testsfailed=0 testscollected=0>
+        manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+    finish pytest_plugin_registered --> [] [hook]
+    pytest_configure [hook]
+        config: <_pytest.config.Config object at 0x103c4a970>
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.LFPlugin object at 0x103dd3b20>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.NFPlugin object at 0x103e02700>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+    early skip of rewriting module: faulthandler [assertion]
+      pytest_configure [hook]
+          config: <_pytest.config.Config object at 0x103c4a970>
+      finish pytest_configure --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.faulthandler.FaultHandlerHooks object at 0x103dd3b80>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.stepwise.StepwisePlugin object at 0x103dd3ac0>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+    early skip of rewriting module: pdb [assertion]
+    early skip of rewriting module: cmd [assertion]
+    early skip of rewriting module: code [assertion]
+    early skip of rewriting module: codeop [assertion]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.PytestPluginManager object at 0x10346e760>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.Config object at 0x103c4a970>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.mark' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/mark/__init__.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.main' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/main.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.runner' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/runner.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.fixtures' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/fixtures.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.helpconfig' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/helpconfig.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.python' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/python.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.terminal' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/terminal.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.debugging' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/debugging.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unittest' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/unittest.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.capture' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/capture.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.skipping' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/skipping.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.tmpdir' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/tmpdir.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.monkeypatch' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/monkeypatch.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.recwarn' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/recwarn.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.pastebin' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/pastebin.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.nose' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/nose.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.assertion' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/assertion/__init__.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.junitxml' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/junitxml.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.resultlog' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/resultlog.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.doctest' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/doctest.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.cacheprovider' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/cacheprovider.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.freeze_support' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/freeze_support.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setuponly' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/setuponly.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setupplan' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/setupplan.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.stepwise' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/stepwise.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.warnings' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/warnings.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.logging' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/logging.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.reports' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/reports.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.faulthandler' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/faulthandler.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <CaptureManager _method='no' _global_capturing=<MultiCapture out=None err=None in_=None _state='suspended' _in_suspended=False> _capture_fixture=None>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.LFPlugin object at 0x103dd3b20>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.NFPlugin object at 0x103e02700>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.faulthandler.FaultHandlerHooks object at 0x103dd3b80>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.stepwise.StepwisePlugin object at 0x103dd3ac0>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.terminal.TerminalReporter object at 0x103df3280>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.logging.LoggingPlugin object at 0x103e47ac0>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+    finish pytest_configure --> [] [hook]
+    pytest_sessionstart [hook]
+        session: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.PytestPluginManager object at 0x10346e760>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.Config object at 0x103c4a970>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.mark' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/mark/__init__.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.main' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/main.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.runner' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/runner.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.fixtures' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/fixtures.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.helpconfig' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/helpconfig.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.python' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/python.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.terminal' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/terminal.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.debugging' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/debugging.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unittest' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/unittest.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.capture' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/capture.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.skipping' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/skipping.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.tmpdir' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/tmpdir.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.monkeypatch' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/monkeypatch.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.recwarn' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/recwarn.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.pastebin' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/pastebin.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.nose' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/nose.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.assertion' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/assertion/__init__.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.junitxml' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/junitxml.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.resultlog' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/resultlog.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.doctest' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/doctest.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.cacheprovider' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/cacheprovider.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.freeze_support' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/freeze_support.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setuponly' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/setuponly.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setupplan' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/setupplan.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.stepwise' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/stepwise.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.warnings' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/warnings.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.logging' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/logging.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.reports' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/reports.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.faulthandler' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/faulthandler.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <CaptureManager _method='no' _global_capturing=<MultiCapture out=None err=None in_=None _state='suspended' _in_suspended=False> _capture_fixture=None>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.LFPlugin object at 0x103dd3b20>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.NFPlugin object at 0x103e02700>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.faulthandler.FaultHandlerHooks object at 0x103dd3b80>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.stepwise.StepwisePlugin object at 0x103dd3ac0>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.terminal.TerminalReporter object at 0x103df3280>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.logging.LoggingPlugin object at 0x103e47ac0>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.fixtures.FixtureManager object at 0x103e47f40>
+          manager: <_pytest.config.PytestPluginManager object at 0x10346e760>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_report_header [hook]
+          config: <_pytest.config.Config object at 0x103c4a970>
+          startdir: /Users/takuro.saito/work/rpa-kot-kintai
+      finish pytest_report_header --> [['rootdir: /Users/takuro.saito/work/rpa-kot-kintai'], 'cachedir: .pytest_cache', ['using: pytest-6.0.1 pylib-1.9.0']] [hook]
+    finish pytest_sessionstart --> [] [hook]
+    pytest_collection [hook]
+        session: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+    perform_collect <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0> ['/Users/takuro.saito/work/rpa-kot-kintai'] [collection]
+        pytest_collectstart [hook]
+            collector: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+        finish pytest_collectstart --> [] [hook]
+        pytest_make_collect_report [hook]
+            collector: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+        processing argument (local('/Users/takuro.saito/work/rpa-kot-kintai'), []) [collection]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/.pytest_cache
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+          early skip of rewriting module: py._code [assertion]
+          early skip of rewriting module: py._code.code [assertion]
+          early skip of rewriting module: repr [assertion]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/test_data
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_directory [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/test_data
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_directory --> None [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/.git
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/.cache
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/.env
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_file [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/.env
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_file --> [] [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/.env.sample
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_file [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/.env.sample
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_file --> [] [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/.gitignore
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_file [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/.gitignore
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_file --> [] [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/README.md
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_file [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/README.md
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_file --> [] [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/auto-kintai.py
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_file [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/auto-kintai.py
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_file --> [] [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/constants.py
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_file [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/constants.py
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_file --> [] [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/enums.py
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_file [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/enums.py
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_file --> [] [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/import_proxy.py
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_file [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/import_proxy.py
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_file --> [] [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/pytestdebug.log
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_file [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/pytestdebug.log
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_file --> [] [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/requirements.txt
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_file [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/requirements.txt
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_file --> [] [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/test_auto_kintai.py
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_file [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/test_auto_kintai.py
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+              pytest_pycollect_makemodule [hook]
+                  path: /Users/takuro.saito/work/rpa-kot-kintai/test_auto_kintai.py
+                  parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+              finish pytest_pycollect_makemodule --> <Module test_auto_kintai.py> [hook]
+            finish pytest_collect_file --> [<Module test_auto_kintai.py>] [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/test_utils.py
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_file [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/test_utils.py
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+              pytest_pycollect_makemodule [hook]
+                  path: /Users/takuro.saito/work/rpa-kot-kintai/test_utils.py
+                  parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+              finish pytest_pycollect_makemodule --> <Module test_utils.py> [hook]
+            finish pytest_collect_file --> [<Module test_utils.py>] [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/utils.py
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_file [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/utils.py
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_file --> [] [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/test_data/login.htm
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_file [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/test_data/login.htm
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_file --> [] [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/test_data/records.htm
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_file [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/test_data/records.htm
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_file --> [] [hook]
+            pytest_ignore_collect [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/test_data/time_sheet.htm
+                config: <_pytest.config.Config object at 0x103c4a970>
+            finish pytest_ignore_collect --> None [hook]
+            pytest_collect_file [hook]
+                path: /Users/takuro.saito/work/rpa-kot-kintai/test_data/time_sheet.htm
+                parent: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_file --> [] [hook]
+        finish pytest_make_collect_report --> <CollectReport '' lenresult=2 outcome='passed'> [hook]
+        pytest_collectreport [hook]
+            report: <CollectReport '' lenresult=2 outcome='passed'>
+        finish pytest_collectreport --> [] [hook]
+    genitems <Module test_auto_kintai.py> [collection]
+      pytest_collectstart [hook]
+          collector: <Module test_auto_kintai.py>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Module test_auto_kintai.py>
+      find_module called for: test_auto_kintai [assertion]
+      matched test file '/Users/takuro.saito/work/rpa-kot-kintai/test_auto_kintai.py' [assertion]
+      _read_pyc(/Users/takuro.saito/work/rpa-kot-kintai/test_auto_kintai.py): invalid or out of date pyc [assertion]
+      rewriting PosixPath('/Users/takuro.saito/work/rpa-kot-kintai/test_auto_kintai.py') [assertion]
+      early skip of rewriting module: import_proxy [assertion]
+      early skip of rewriting module: auto-kintai [assertion]
+      early skip of rewriting module: getpass [assertion]
+      early skip of rewriting module: termios [assertion]
+      early skip of rewriting module: selenium [assertion]
+      early skip of rewriting module: selenium.webdriver [assertion]
+      early skip of rewriting module: selenium.webdriver.firefox [assertion]
+      early skip of rewriting module: selenium.webdriver.firefox.webdriver [assertion]
+      early skip of rewriting module: selenium.webdriver.common [assertion]
+      early skip of rewriting module: selenium.webdriver.common.desired_capabilities [assertion]
+      early skip of rewriting module: selenium.webdriver.remote [assertion]
+      early skip of rewriting module: selenium.webdriver.remote.webdriver [assertion]
+      early skip of rewriting module: base64 [assertion]
+      early skip of rewriting module: selenium.webdriver.remote.command [assertion]
+      early skip of rewriting module: selenium.webdriver.remote.webelement [assertion]
+      early skip of rewriting module: hashlib [assertion]
+      early skip of rewriting module: _hashlib [assertion]
+      early skip of rewriting module: _blake2 [assertion]
+      early skip of rewriting module: _sha3 [assertion]
+      early skip of rewriting module: pkgutil [assertion]
+      early skip of rewriting module: selenium.common [assertion]
+      early skip of rewriting module: selenium.common.exceptions [assertion]
+      early skip of rewriting module: selenium.webdriver.common.by [assertion]
+      early skip of rewriting module: selenium.webdriver.common.utils [assertion]
+      early skip of rewriting module: socket [assertion]
+      early skip of rewriting module: _socket [assertion]
+      early skip of rewriting module: selenium.webdriver.common.keys [assertion]
+      early skip of rewriting module: StringIO [assertion]
+      early skip of rewriting module: selenium.webdriver.remote.remote_connection [assertion]
+      early skip of rewriting module: urllib3 [assertion]
+      early skip of rewriting module: urllib3.connectionpool [assertion]
+      early skip of rewriting module: urllib3.exceptions [assertion]
+      early skip of rewriting module: urllib3.packages [assertion]
+      early skip of rewriting module: urllib3.packages.ssl_match_hostname [assertion]
+      early skip of rewriting module: ssl [assertion]
+      early skip of rewriting module: _ssl [assertion]
+      early skip of rewriting module: urllib3.packages.six [assertion]
+      early skip of rewriting module: urllib3.packages.six.moves [assertion]
+      early skip of rewriting module: urllib3.packages.six.moves.http_client [assertion]
+      early skip of rewriting module: http [assertion]
+      early skip of rewriting module: http.client [assertion]
+      early skip of rewriting module: email.parser [assertion]
+      early skip of rewriting module: email.feedparser [assertion]
+      early skip of rewriting module: email.errors [assertion]
+      early skip of rewriting module: email._policybase [assertion]
+      early skip of rewriting module: email.header [assertion]
+      early skip of rewriting module: email.quoprimime [assertion]
+      early skip of rewriting module: email.base64mime [assertion]
+      early skip of rewriting module: email.charset [assertion]
+      early skip of rewriting module: email.encoders [assertion]
+      early skip of rewriting module: quopri [assertion]
+      early skip of rewriting module: email.utils [assertion]
+      early skip of rewriting module: email._parseaddr [assertion]
+      early skip of rewriting module: calendar [assertion]
+      early skip of rewriting module: email.message [assertion]
+      early skip of rewriting module: uu [assertion]
+      early skip of rewriting module: email._encoded_words [assertion]
+      early skip of rewriting module: email.iterators [assertion]
+      early skip of rewriting module: queue [assertion]
+      early skip of rewriting module: _queue [assertion]
+      early skip of rewriting module: urllib3.connection [assertion]
+      early skip of rewriting module: urllib3.util [assertion]
+      early skip of rewriting module: urllib3.util.connection [assertion]
+      early skip of rewriting module: urllib3.util.wait [assertion]
+      early skip of rewriting module: urllib3.contrib [assertion]
+      early skip of rewriting module: urllib3.contrib._appengine_environ [assertion]
+      early skip of rewriting module: urllib3.util.request [assertion]
+      early skip of rewriting module: brotli [assertion]
+      early skip of rewriting module: urllib3.util.response [assertion]
+      early skip of rewriting module: urllib3.util.ssl_ [assertion]
+      early skip of rewriting module: hmac [assertion]
+      early skip of rewriting module: urllib3.util.url [assertion]
+      early skip of rewriting module: urllib3.util.timeout [assertion]
+      early skip of rewriting module: urllib3.util.retry [assertion]
+      early skip of rewriting module: urllib3._collections [assertion]
+      early skip of rewriting module: urllib3.request [assertion]
+      early skip of rewriting module: urllib3.filepost [assertion]
+      early skip of rewriting module: urllib3.fields [assertion]
+      early skip of rewriting module: mimetypes [assertion]
+      early skip of rewriting module: winreg [assertion]
+      early skip of rewriting module: urllib3.packages.six.moves.urllib [assertion]
+      early skip of rewriting module: urllib3.packages.six.moves.urllib.parse [assertion]
+      early skip of rewriting module: urllib3.response [assertion]
+      early skip of rewriting module: brotli [assertion]
+      early skip of rewriting module: urllib3.util.queue [assertion]
+      early skip of rewriting module: urllib3.poolmanager [assertion]
+      early skip of rewriting module: selenium.webdriver.remote.errorhandler [assertion]
+      early skip of rewriting module: selenium.webdriver.remote.utils [assertion]
+      early skip of rewriting module: selenium.webdriver.remote.switch_to [assertion]
+      early skip of rewriting module: selenium.webdriver.common.alert [assertion]
+      early skip of rewriting module: selenium.webdriver.remote.mobile [assertion]
+      early skip of rewriting module: selenium.webdriver.remote.file_detector [assertion]
+      early skip of rewriting module: selenium.webdriver.common.html5 [assertion]
+      early skip of rewriting module: selenium.webdriver.common.html5.application_cache [assertion]
+      early skip of rewriting module: selenium.webdriver.firefox.extension_connection [assertion]
+      early skip of rewriting module: selenium.webdriver.firefox.firefox_binary [assertion]
+      early skip of rewriting module: selenium.webdriver.firefox.firefox_profile [assertion]
+      early skip of rewriting module: cStringIO [assertion]
+      early skip of rewriting module: xml [assertion]
+      early skip of rewriting module: xml.dom [assertion]
+      early skip of rewriting module: xml.dom.domreg [assertion]
+      early skip of rewriting module: xml.dom.minidom [assertion]
+      early skip of rewriting module: xml.dom.minicompat [assertion]
+      early skip of rewriting module: xml.dom.xmlbuilder [assertion]
+      early skip of rewriting module: xml.dom.NodeFilter [assertion]
+      early skip of rewriting module: selenium.webdriver.common.proxy [assertion]
+      early skip of rewriting module: selenium.webdriver.firefox.options [assertion]
+      early skip of rewriting module: selenium.webdriver.firefox.remote_connection [assertion]
+      early skip of rewriting module: selenium.webdriver.firefox.service [assertion]
+      early skip of rewriting module: selenium.webdriver.common.service [assertion]
+      early skip of rewriting module: selenium.webdriver.firefox.webelement [assertion]
+      early skip of rewriting module: selenium.webdriver.chrome [assertion]
+      early skip of rewriting module: selenium.webdriver.chrome.webdriver [assertion]
+      early skip of rewriting module: selenium.webdriver.chrome.remote_connection [assertion]
+      early skip of rewriting module: selenium.webdriver.chrome.service [assertion]
+      early skip of rewriting module: selenium.webdriver.chrome.options [assertion]
+      early skip of rewriting module: selenium.webdriver.ie [assertion]
+      early skip of rewriting module: selenium.webdriver.ie.webdriver [assertion]
+      early skip of rewriting module: selenium.webdriver.ie.service [assertion]
+      early skip of rewriting module: selenium.webdriver.ie.options [assertion]
+      early skip of rewriting module: selenium.webdriver.edge [assertion]
+      early skip of rewriting module: selenium.webdriver.edge.webdriver [assertion]
+      early skip of rewriting module: selenium.webdriver.edge.service [assertion]
+      early skip of rewriting module: selenium.webdriver.opera [assertion]
+      early skip of rewriting module: selenium.webdriver.opera.webdriver [assertion]
+      early skip of rewriting module: selenium.webdriver.opera.options [assertion]
+      early skip of rewriting module: selenium.webdriver.safari [assertion]
+      early skip of rewriting module: selenium.webdriver.safari.webdriver [assertion]
+      early skip of rewriting module: selenium.webdriver.safari.service [assertion]
+      early skip of rewriting module: selenium.webdriver.safari.remote_connection [assertion]
+      early skip of rewriting module: selenium.webdriver.blackberry [assertion]
+      early skip of rewriting module: selenium.webdriver.blackberry.webdriver [assertion]
+      early skip of rewriting module: selenium.webdriver.support [assertion]
+      early skip of rewriting module: selenium.webdriver.support.ui [assertion]
+      early skip of rewriting module: selenium.webdriver.support.select [assertion]
+      early skip of rewriting module: selenium.webdriver.support.wait [assertion]
+      early skip of rewriting module: selenium.webdriver.phantomjs [assertion]
+      early skip of rewriting module: selenium.webdriver.phantomjs.webdriver [assertion]
+      early skip of rewriting module: selenium.webdriver.phantomjs.service [assertion]
+      early skip of rewriting module: selenium.webdriver.android [assertion]
+      early skip of rewriting module: selenium.webdriver.android.webdriver [assertion]
+      early skip of rewriting module: selenium.webdriver.webkitgtk [assertion]
+      early skip of rewriting module: selenium.webdriver.webkitgtk.webdriver [assertion]
+      early skip of rewriting module: selenium.webdriver.webkitgtk.service [assertion]
+      early skip of rewriting module: selenium.webdriver.webkitgtk.options [assertion]
+      early skip of rewriting module: selenium.webdriver.common.action_chains [assertion]
+      early skip of rewriting module: selenium.webdriver.common.actions [assertion]
+      early skip of rewriting module: selenium.webdriver.common.actions.action_builder [assertion]
+      early skip of rewriting module: selenium.webdriver.common.actions.interaction [assertion]
+      early skip of rewriting module: selenium.webdriver.common.actions.key_actions [assertion]
+      early skip of rewriting module: selenium.webdriver.common.actions.key_input [assertion]
+      early skip of rewriting module: selenium.webdriver.common.actions.input_device [assertion]
+      early skip of rewriting module: selenium.webdriver.common.actions.pointer_actions [assertion]
+      early skip of rewriting module: selenium.webdriver.common.actions.mouse_button [assertion]
+      early skip of rewriting module: selenium.webdriver.common.actions.pointer_input [assertion]
+      early skip of rewriting module: selenium.webdriver.common.touch_actions [assertion]
+      early skip of rewriting module: chromedriver_binary [assertion]
+      early skip of rewriting module: chromedriver_binary.utils [assertion]
+      early skip of rewriting module: utils [assertion]
+      early skip of rewriting module: getopt [assertion]
+      early skip of rewriting module: constants [assertion]
+      early skip of rewriting module: enums [assertion]
+      early skip of rewriting module: dotenv [assertion]
+      early skip of rewriting module: dotenv.compat [assertion]
+      early skip of rewriting module: dotenv.main [assertion]
+      early skip of rewriting module: dotenv.parser [assertion]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __name__
+            obj: test_auto_kintai
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __doc__
+            obj: None
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __package__
+            obj: 
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __loader__
+            obj: <_pytest.assertion.rewrite.AssertionRewritingHook object at 0x103e02dc0>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __spec__
+            obj: ModuleSpec(name='test_auto_kintai', loader=<_pytest.assertion.rewrite.AssertionRewritingHook object at 0x103e02dc0>, origin='/Users/takuro.saito/work/rpa-kot-kintai/test_auto_kintai.py')
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __file__
+            obj: /Users/takuro.saito/work/rpa-kot-kintai/test_auto_kintai.py
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __cached__
+            obj: /Users/takuro.saito/work/rpa-kot-kintai/__pycache__/test_auto_kintai.cpython-38.pyc
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __builtins__
+            obj: {'__name__': 'builtins', '__doc__': "Built-in functions, exceptions, and other objects.\n\nNoteworthy: None is the `nil' object; Ellipsis represents `...' in slices.", '__package__': '', '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': ModuleSpec(name='builtins', loader=<class '_frozen_importlib.BuiltinImporter'>), '__build_class__': <built-in function __build_class__>, '__import__': <built-in function __import__>, 'abs': <built-in function abs>, 'all': <built-in function all>, 'any': <built-in function any>, 'ascii': <built-in function ascii>, 'bin': <built-in function bin>, 'breakpoint': <built-in function breakpoint>, 'callable': <built-in function callable>, 'chr': <built-in function chr>, 'compile': <built-in function compile>, 'delattr': <built-in function delattr>, 'dir': <built-in function dir>, 'divmod': <built-in function divmod>, 'eval': <built-in function eval>, 'exec': <built-in function exec>, 'format': <built-in function format>, 'getattr': <built-in function getattr>, 'globals': <built-in function globals>, 'hasattr': <built-in function hasattr>, 'hash': <built-in function hash>, 'hex': <built-in function hex>, 'id': <built-in function id>, 'input': <built-in function input>, 'isinstance': <built-in function isinstance>, 'issubclass': <built-in function issubclass>, 'iter': <built-in function iter>, 'len': <built-in function len>, 'locals': <built-in function locals>, 'max': <built-in function max>, 'min': <built-in function min>, 'next': <built-in function next>, 'oct': <built-in function oct>, 'ord': <built-in function ord>, 'pow': <built-in function pow>, 'print': <built-in function print>, 'repr': <built-in function repr>, 'round': <built-in function round>, 'setattr': <built-in function setattr>, 'sorted': <built-in function sorted>, 'sum': <built-in function sum>, 'vars': <built-in function vars>, 'None': None, 'Ellipsis': Ellipsis, 'NotImplemented': NotImplemented, 'False': False, 'True': True, 'bool': <class 'bool'>, 'memoryview': <class 'memoryview'>, 'bytearray': <class 'bytearray'>, 'bytes': <class 'bytes'>, 'classmethod': <class 'classmethod'>, 'complex': <class 'complex'>, 'dict': <class 'dict'>, 'enumerate': <class 'enumerate'>, 'filter': <class 'filter'>, 'float': <class 'float'>, 'frozenset': <class 'frozenset'>, 'property': <class 'property'>, 'int': <class 'int'>, 'list': <class 'list'>, 'map': <class 'map'>, 'object': <class 'object'>, 'range': <class 'range'>, 'reversed': <class 'reversed'>, 'set': <class 'set'>, 'slice': <class 'slice'>, 'staticmethod': <class 'staticmethod'>, 'str': <class 'str'>, 'super': <class 'super'>, 'tuple': <class 'tuple'>, 'type': <class 'type'>, 'zip': <class 'zip'>, '__debug__': True, 'BaseException': <class 'BaseException'>, 'Exception': <class 'Exception'>, 'TypeError': <class 'TypeError'>, 'StopAsyncIteration': <class 'StopAsyncIteration'>, 'StopIteration': <class 'StopIteration'>, 'GeneratorExit': <class 'GeneratorExit'>, 'SystemExit': <class 'SystemExit'>, 'KeyboardInterrupt': <class 'KeyboardInterrupt'>, 'ImportError': <class 'ImportError'>, 'ModuleNotFoundError': <class 'ModuleNotFoundError'>, 'OSError': <class 'OSError'>, 'EnvironmentError': <class 'OSError'>, 'IOError': <class 'OSError'>, 'EOFError': <class 'EOFError'>, 'RuntimeError': <class 'RuntimeError'>, 'RecursionError': <class 'RecursionError'>, 'NotImplementedError': <class 'NotImplementedError'>, 'NameError': <class 'NameError'>, 'UnboundLocalError': <class 'UnboundLocalError'>, 'AttributeError': <class 'AttributeError'>, 'SyntaxError': <class 'SyntaxError'>, 'IndentationError': <class 'IndentationError'>, 'TabError': <class 'TabError'>, 'LookupError': <class 'LookupError'>, 'IndexError': <class 'IndexError'>, 'KeyError': <class 'KeyError'>, 'ValueError': <class 'ValueError'>, 'UnicodeError': <class 'UnicodeError'>, 'UnicodeEncodeError': <class 'UnicodeEncodeError'>, 'UnicodeDecodeError': <class 'UnicodeDecodeError'>, 'UnicodeTranslateError': <class 'UnicodeTranslateError'>, 'AssertionError': <class 'AssertionError'>, 'ArithmeticError': <class 'ArithmeticError'>, 'FloatingPointError': <class 'FloatingPointError'>, 'OverflowError': <class 'OverflowError'>, 'ZeroDivisionError': <class 'ZeroDivisionError'>, 'SystemError': <class 'SystemError'>, 'ReferenceError': <class 'ReferenceError'>, 'MemoryError': <class 'MemoryError'>, 'BufferError': <class 'BufferError'>, 'Warning': <class 'Warning'>, 'UserWarning': <class 'UserWarning'>, 'DeprecationWarning': <class 'DeprecationWarning'>, 'PendingDeprecationWarning': <class 'PendingDeprecationWarning'>, 'SyntaxWarning': <class 'SyntaxWarning'>, 'RuntimeWarning': <class 'RuntimeWarning'>, 'FutureWarning': <class 'FutureWarning'>, 'ImportWarning': <class 'ImportWarning'>, 'UnicodeWarning': <class 'UnicodeWarning'>, 'BytesWarning': <class 'BytesWarning'>, 'ResourceWarning': <class 'ResourceWarning'>, 'ConnectionError': <class 'ConnectionError'>, 'BlockingIOError': <class 'BlockingIOError'>, 'BrokenPipeError': <class 'BrokenPipeError'>, 'ChildProcessError': <class 'ChildProcessError'>, 'ConnectionAbortedError': <class 'ConnectionAbortedError'>, 'ConnectionRefusedError': <class 'ConnectionRefusedError'>, 'ConnectionResetError': <class 'ConnectionResetError'>, 'FileExistsError': <class 'FileExistsError'>, 'FileNotFoundError': <class 'FileNotFoundError'>, 'IsADirectoryError': <class 'IsADirectoryError'>, 'NotADirectoryError': <class 'NotADirectoryError'>, 'InterruptedError': <class 'InterruptedError'>, 'PermissionError': <class 'PermissionError'>, 'ProcessLookupError': <class 'ProcessLookupError'>, 'TimeoutError': <class 'TimeoutError'>, 'open': <built-in function open>, 'quit': Use quit() or Ctrl-D (i.e. EOF) to exit, 'exit': Use exit() or Ctrl-D (i.e. EOF) to exit, 'copyright': Copyright (c) 2001-2020 Python Software Foundation.
+All Rights Reserved.
+
+Copyright (c) 2000 BeOpen.com.
+All Rights Reserved.
+
+Copyright (c) 1995-2001 Corporation for National Research Initiatives.
+All Rights Reserved.
+
+Copyright (c) 1991-1995 Stichting Mathematisch Centrum, Amsterdam.
+All Rights Reserved., 'credits':     Thanks to CWI, CNRI, BeOpen.com, Zope Corporation and a cast of thousands
+    for supporting Python development.  See www.python.org for more information., 'license': Type license() to see the full license text, 'help': Type help() for interactive help, or help(object) for help about object.}
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: @py_builtins
+            obj: <module 'builtins' (built-in)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: @pytest_ar
+            obj: <module '_pytest.assertion.rewrite' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/assertion/rewrite.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: tmp
+            obj: <module 'auto-kintai' from '/Users/takuro.saito/work/rpa-kot-kintai/auto-kintai.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: sys
+            obj: <module 'sys' (built-in)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: time
+            obj: <module 'time' (built-in)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: datetime
+            obj: <class 'datetime.datetime'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: getpass
+            obj: <function unix_getpass at 0x103e9a700>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: webdriver
+            obj: <module 'selenium.webdriver' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/selenium/webdriver/__init__.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: Keys
+            obj: <class 'selenium.webdriver.common.keys.Keys'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: Select
+            obj: <class 'selenium.webdriver.support.select.Select'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: NoSuchElementException
+            obj: <class 'selenium.common.exceptions.NoSuchElementException'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: chromedriver_binary
+            obj: <module 'chromedriver_binary' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/chromedriver_binary/__init__.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: utils
+            obj: <module 'utils' from '/Users/takuro.saito/work/rpa-kot-kintai/utils.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: constants
+            obj: <module 'constants' from '/Users/takuro.saito/work/rpa-kot-kintai/constants.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: RecordType
+            obj: <enum 'RecordType'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: os
+            obj: <module 'os' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/os.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: join
+            obj: <function join at 0x103412940>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: dirname
+            obj: <function dirname at 0x103412c10>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: load_dotenv
+            obj: <function load_dotenv at 0x10447bf70>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: read_input
+            obj: <function read_input at 0x103e9a5e0>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: set_driver
+            obj: <function set_driver at 0x104463c10>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: login
+            obj: <function login at 0x10447d160>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: find_today_row_index
+            obj: <function find_today_row_index at 0x10447d1f0>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: find_day_closed
+            obj: <function find_day_closed at 0x10447d280>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: find_open_timesheet_form_button_index
+            obj: <function find_open_timesheet_form_button_index at 0x10447d310>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: open_timesheet_form
+            obj: <function open_timesheet_form at 0x10447d3a0>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: is_application_pending
+            obj: <function is_application_pending at 0x10447d430>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: find_selected_record_type_option_elements
+            obj: <function find_selected_record_type_option_elements at 0x10447d4c0>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: is_specific_record_type_selected
+            obj: <function is_specific_record_type_selected at 0x10447d550>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: is_specific_record_type_applied
+            obj: <function is_specific_record_type_applied at 0x10447d5e0>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: enter_records
+            obj: <function enter_records at 0x10447d670>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: enter_timesheet
+            obj: <function enter_timesheet at 0x10447d700>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: main
+            obj: <function main at 0x10447d790>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: re
+            obj: <module 're' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/re.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: test_find_day_closed
+            obj: <function test_find_day_closed at 0x103e84f70>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x103e5bfa0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_find_day_closed>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __repr__
+            obj: <slot wrapper '__repr__' of 'module' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __getattribute__
+            obj: <slot wrapper '__getattribute__' of 'module' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __setattr__
+            obj: <slot wrapper '__setattr__' of 'module' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __delattr__
+            obj: <slot wrapper '__delattr__' of 'module' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __init__
+            obj: <slot wrapper '__init__' of 'module' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __new__
+            obj: <built-in method __new__ of type object at 0x1031a1600>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __dir__
+            obj: <method '__dir__' of 'module' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __dict__
+            obj: <member '__dict__' of 'module' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __hash__
+            obj: <slot wrapper '__hash__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __str__
+            obj: <slot wrapper '__str__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __lt__
+            obj: <slot wrapper '__lt__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __le__
+            obj: <slot wrapper '__le__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __eq__
+            obj: <slot wrapper '__eq__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __ne__
+            obj: <slot wrapper '__ne__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __gt__
+            obj: <slot wrapper '__gt__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __ge__
+            obj: <slot wrapper '__ge__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __reduce_ex__
+            obj: <method '__reduce_ex__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __reduce__
+            obj: <method '__reduce__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __subclasshook__
+            obj: <method '__subclasshook__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __init_subclass__
+            obj: <method '__init_subclass__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __format__
+            obj: <method '__format__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __sizeof__
+            obj: <method '__sizeof__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_auto_kintai.py>
+            name: __class__
+            obj: <attribute '__class__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+      finish pytest_make_collect_report --> <CollectReport 'test_auto_kintai.py' lenresult=1 outcome='passed'> [hook]
+    genitems <Function test_find_day_closed> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_find_day_closed>
+      finish pytest_itemcollected --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'test_auto_kintai.py' lenresult=1 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+    genitems <Module test_utils.py> [collection]
+      pytest_collectstart [hook]
+          collector: <Module test_utils.py>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Module test_utils.py>
+      find_module called for: test_utils [assertion]
+      matched test file '/Users/takuro.saito/work/rpa-kot-kintai/test_utils.py' [assertion]
+      found cached rewritten pyc for /Users/takuro.saito/work/rpa-kot-kintai/test_utils.py [assertion]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __name__
+            obj: test_utils
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __doc__
+            obj: None
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __package__
+            obj: 
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __loader__
+            obj: <_pytest.assertion.rewrite.AssertionRewritingHook object at 0x103e02dc0>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __spec__
+            obj: ModuleSpec(name='test_utils', loader=<_pytest.assertion.rewrite.AssertionRewritingHook object at 0x103e02dc0>, origin='/Users/takuro.saito/work/rpa-kot-kintai/test_utils.py')
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __file__
+            obj: /Users/takuro.saito/work/rpa-kot-kintai/test_utils.py
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __cached__
+            obj: /Users/takuro.saito/work/rpa-kot-kintai/__pycache__/test_utils.cpython-38.pyc
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __builtins__
+            obj: {'__name__': 'builtins', '__doc__': "Built-in functions, exceptions, and other objects.\n\nNoteworthy: None is the `nil' object; Ellipsis represents `...' in slices.", '__package__': '', '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': ModuleSpec(name='builtins', loader=<class '_frozen_importlib.BuiltinImporter'>), '__build_class__': <built-in function __build_class__>, '__import__': <built-in function __import__>, 'abs': <built-in function abs>, 'all': <built-in function all>, 'any': <built-in function any>, 'ascii': <built-in function ascii>, 'bin': <built-in function bin>, 'breakpoint': <built-in function breakpoint>, 'callable': <built-in function callable>, 'chr': <built-in function chr>, 'compile': <built-in function compile>, 'delattr': <built-in function delattr>, 'dir': <built-in function dir>, 'divmod': <built-in function divmod>, 'eval': <built-in function eval>, 'exec': <built-in function exec>, 'format': <built-in function format>, 'getattr': <built-in function getattr>, 'globals': <built-in function globals>, 'hasattr': <built-in function hasattr>, 'hash': <built-in function hash>, 'hex': <built-in function hex>, 'id': <built-in function id>, 'input': <built-in function input>, 'isinstance': <built-in function isinstance>, 'issubclass': <built-in function issubclass>, 'iter': <built-in function iter>, 'len': <built-in function len>, 'locals': <built-in function locals>, 'max': <built-in function max>, 'min': <built-in function min>, 'next': <built-in function next>, 'oct': <built-in function oct>, 'ord': <built-in function ord>, 'pow': <built-in function pow>, 'print': <built-in function print>, 'repr': <built-in function repr>, 'round': <built-in function round>, 'setattr': <built-in function setattr>, 'sorted': <built-in function sorted>, 'sum': <built-in function sum>, 'vars': <built-in function vars>, 'None': None, 'Ellipsis': Ellipsis, 'NotImplemented': NotImplemented, 'False': False, 'True': True, 'bool': <class 'bool'>, 'memoryview': <class 'memoryview'>, 'bytearray': <class 'bytearray'>, 'bytes': <class 'bytes'>, 'classmethod': <class 'classmethod'>, 'complex': <class 'complex'>, 'dict': <class 'dict'>, 'enumerate': <class 'enumerate'>, 'filter': <class 'filter'>, 'float': <class 'float'>, 'frozenset': <class 'frozenset'>, 'property': <class 'property'>, 'int': <class 'int'>, 'list': <class 'list'>, 'map': <class 'map'>, 'object': <class 'object'>, 'range': <class 'range'>, 'reversed': <class 'reversed'>, 'set': <class 'set'>, 'slice': <class 'slice'>, 'staticmethod': <class 'staticmethod'>, 'str': <class 'str'>, 'super': <class 'super'>, 'tuple': <class 'tuple'>, 'type': <class 'type'>, 'zip': <class 'zip'>, '__debug__': True, 'BaseException': <class 'BaseException'>, 'Exception': <class 'Exception'>, 'TypeError': <class 'TypeError'>, 'StopAsyncIteration': <class 'StopAsyncIteration'>, 'StopIteration': <class 'StopIteration'>, 'GeneratorExit': <class 'GeneratorExit'>, 'SystemExit': <class 'SystemExit'>, 'KeyboardInterrupt': <class 'KeyboardInterrupt'>, 'ImportError': <class 'ImportError'>, 'ModuleNotFoundError': <class 'ModuleNotFoundError'>, 'OSError': <class 'OSError'>, 'EnvironmentError': <class 'OSError'>, 'IOError': <class 'OSError'>, 'EOFError': <class 'EOFError'>, 'RuntimeError': <class 'RuntimeError'>, 'RecursionError': <class 'RecursionError'>, 'NotImplementedError': <class 'NotImplementedError'>, 'NameError': <class 'NameError'>, 'UnboundLocalError': <class 'UnboundLocalError'>, 'AttributeError': <class 'AttributeError'>, 'SyntaxError': <class 'SyntaxError'>, 'IndentationError': <class 'IndentationError'>, 'TabError': <class 'TabError'>, 'LookupError': <class 'LookupError'>, 'IndexError': <class 'IndexError'>, 'KeyError': <class 'KeyError'>, 'ValueError': <class 'ValueError'>, 'UnicodeError': <class 'UnicodeError'>, 'UnicodeEncodeError': <class 'UnicodeEncodeError'>, 'UnicodeDecodeError': <class 'UnicodeDecodeError'>, 'UnicodeTranslateError': <class 'UnicodeTranslateError'>, 'AssertionError': <class 'AssertionError'>, 'ArithmeticError': <class 'ArithmeticError'>, 'FloatingPointError': <class 'FloatingPointError'>, 'OverflowError': <class 'OverflowError'>, 'ZeroDivisionError': <class 'ZeroDivisionError'>, 'SystemError': <class 'SystemError'>, 'ReferenceError': <class 'ReferenceError'>, 'MemoryError': <class 'MemoryError'>, 'BufferError': <class 'BufferError'>, 'Warning': <class 'Warning'>, 'UserWarning': <class 'UserWarning'>, 'DeprecationWarning': <class 'DeprecationWarning'>, 'PendingDeprecationWarning': <class 'PendingDeprecationWarning'>, 'SyntaxWarning': <class 'SyntaxWarning'>, 'RuntimeWarning': <class 'RuntimeWarning'>, 'FutureWarning': <class 'FutureWarning'>, 'ImportWarning': <class 'ImportWarning'>, 'UnicodeWarning': <class 'UnicodeWarning'>, 'BytesWarning': <class 'BytesWarning'>, 'ResourceWarning': <class 'ResourceWarning'>, 'ConnectionError': <class 'ConnectionError'>, 'BlockingIOError': <class 'BlockingIOError'>, 'BrokenPipeError': <class 'BrokenPipeError'>, 'ChildProcessError': <class 'ChildProcessError'>, 'ConnectionAbortedError': <class 'ConnectionAbortedError'>, 'ConnectionRefusedError': <class 'ConnectionRefusedError'>, 'ConnectionResetError': <class 'ConnectionResetError'>, 'FileExistsError': <class 'FileExistsError'>, 'FileNotFoundError': <class 'FileNotFoundError'>, 'IsADirectoryError': <class 'IsADirectoryError'>, 'NotADirectoryError': <class 'NotADirectoryError'>, 'InterruptedError': <class 'InterruptedError'>, 'PermissionError': <class 'PermissionError'>, 'ProcessLookupError': <class 'ProcessLookupError'>, 'TimeoutError': <class 'TimeoutError'>, 'open': <built-in function open>, 'quit': Use quit() or Ctrl-D (i.e. EOF) to exit, 'exit': Use exit() or Ctrl-D (i.e. EOF) to exit, 'copyright': Copyright (c) 2001-2020 Python Software Foundation.
+All Rights Reserved.
+
+Copyright (c) 2000 BeOpen.com.
+All Rights Reserved.
+
+Copyright (c) 1995-2001 Corporation for National Research Initiatives.
+All Rights Reserved.
+
+Copyright (c) 1991-1995 Stichting Mathematisch Centrum, Amsterdam.
+All Rights Reserved., 'credits':     Thanks to CWI, CNRI, BeOpen.com, Zope Corporation and a cast of thousands
+    for supporting Python development.  See www.python.org for more information., 'license': Type license() to see the full license text, 'help': Type help() for interactive help, or help(object) for help about object.}
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: @py_builtins
+            obj: <module 'builtins' (built-in)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: @pytest_ar
+            obj: <module '_pytest.assertion.rewrite' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/site-packages/_pytest/assertion/rewrite.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: sys
+            obj: <module 'sys' (built-in)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: getopt
+            obj: <module 'getopt' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/getopt.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: datetime
+            obj: <class 'datetime.datetime'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: constants
+            obj: <module 'constants' from '/Users/takuro.saito/work/rpa-kot-kintai/constants.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: generate_today_text
+            obj: <function generate_today_text at 0x104463040>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: verify_options
+            obj: <function verify_options at 0x104463b80>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: re
+            obj: <module 're' from '/Users/takuro.saito/.pyenv/versions/3.8.2/lib/python3.8/re.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: test_generate_today_text
+            obj: <function test_generate_today_text at 0x10447d9d0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x103e5bf10>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_generate_today_text>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: test_verify_options_help
+            obj: <function test_verify_options_help at 0x10447daf0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x103e5b5b0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_verify_options_help>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __repr__
+            obj: <slot wrapper '__repr__' of 'module' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __getattribute__
+            obj: <slot wrapper '__getattribute__' of 'module' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __setattr__
+            obj: <slot wrapper '__setattr__' of 'module' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __delattr__
+            obj: <slot wrapper '__delattr__' of 'module' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __init__
+            obj: <slot wrapper '__init__' of 'module' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __new__
+            obj: <built-in method __new__ of type object at 0x1031a1600>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __dir__
+            obj: <method '__dir__' of 'module' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __dict__
+            obj: <member '__dict__' of 'module' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __hash__
+            obj: <slot wrapper '__hash__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __str__
+            obj: <slot wrapper '__str__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __lt__
+            obj: <slot wrapper '__lt__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __le__
+            obj: <slot wrapper '__le__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __eq__
+            obj: <slot wrapper '__eq__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __ne__
+            obj: <slot wrapper '__ne__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __gt__
+            obj: <slot wrapper '__gt__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __ge__
+            obj: <slot wrapper '__ge__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __reduce_ex__
+            obj: <method '__reduce_ex__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __reduce__
+            obj: <method '__reduce__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __subclasshook__
+            obj: <method '__subclasshook__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __init_subclass__
+            obj: <method '__init_subclass__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __format__
+            obj: <method '__format__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __sizeof__
+            obj: <method '__sizeof__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_utils.py>
+            name: __class__
+            obj: <attribute '__class__' of 'object' objects>
+        finish pytest_pycollect_makeitem --> None [hook]
+      finish pytest_make_collect_report --> <CollectReport 'test_utils.py' lenresult=2 outcome='passed'> [hook]
+    genitems <Function test_generate_today_text> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_generate_today_text>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_verify_options_help> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_verify_options_help>
+      finish pytest_itemcollected --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'test_utils.py' lenresult=2 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+      pytest_collection_modifyitems [hook]
+          session: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+          config: <_pytest.config.Config object at 0x103c4a970>
+          items: [<Function test_find_day_closed>, <Function test_generate_today_text>, <Function test_verify_options_help>]
+      finish pytest_collection_modifyitems --> [] [hook]
+      pytest_collection_finish [hook]
+          session: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+        pytest_report_collectionfinish [hook]
+            config: <_pytest.config.Config object at 0x103c4a970>
+            startdir: /Users/takuro.saito/work/rpa-kot-kintai
+            items: [<Function test_find_day_closed>, <Function test_generate_today_text>, <Function test_verify_options_help>]
+        finish pytest_report_collectionfinish --> [] [hook]
+      finish pytest_collection_finish --> [] [hook]
+    finish pytest_collection --> None [hook]
+    pytest_runtestloop [hook]
+        session: <Session rpa-kot-kintai exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=3>
+      pytest_runtest_protocol [hook]
+          item: <Function test_find_day_closed>
+          nextitem: <Function test_generate_today_text>
+        pytest_runtest_logstart [hook]
+            nodeid: test_auto_kintai.py::test_find_day_closed
+            location: ('test_auto_kintai.py', 5, 'test_find_day_closed')
+        finish pytest_runtest_logstart --> [] [hook]
+        pytest_runtest_setup [hook]
+            item: <Function test_find_day_closed>
+        finish pytest_runtest_setup --> [] [hook]
+        pytest_runtest_makereport [hook]
+            item: <Function test_find_day_closed>
+            call: <CallInfo when='setup' result: []>
+        finish pytest_runtest_makereport --> <TestReport 'test_auto_kintai.py::test_find_day_closed' when='setup' outcome='passed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'test_auto_kintai.py::test_find_day_closed' when='setup' outcome='passed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'test_auto_kintai.py::test_find_day_closed' when='setup' outcome='passed'>
+              config: <_pytest.config.Config object at 0x103c4a970>
+          finish pytest_report_teststatus --> ('', '', '') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_runtest_call [hook]
+            item: <Function test_find_day_closed>
+          pytest_pyfunc_call [hook]
+              pyfuncitem: <Function test_find_day_closed>
+          early skip of rewriting module: encodings.idna [assertion]
+          early skip of rewriting module: stringprep [assertion]
+          finish pytest_pyfunc_call --> True [hook]
+        finish pytest_runtest_call --> [] [hook]
+        pytest_runtest_makereport [hook]
+            item: <Function test_find_day_closed>
+            call: <CallInfo when='call' result: []>
+        finish pytest_runtest_makereport --> <TestReport 'test_auto_kintai.py::test_find_day_closed' when='call' outcome='passed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'test_auto_kintai.py::test_find_day_closed' when='call' outcome='passed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'test_auto_kintai.py::test_find_day_closed' when='call' outcome='passed'>
+              config: <_pytest.config.Config object at 0x103c4a970>
+          finish pytest_report_teststatus --> ('passed', '.', 'PASSED') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_runtest_teardown [hook]
+            item: <Function test_find_day_closed>
+            nextitem: <Function test_generate_today_text>
+        finish pytest_runtest_teardown --> [] [hook]
+        pytest_runtest_makereport [hook]
+            item: <Function test_find_day_closed>
+            call: <CallInfo when='teardown' result: []>
+        finish pytest_runtest_makereport --> <TestReport 'test_auto_kintai.py::test_find_day_closed' when='teardown' outcome='passed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'test_auto_kintai.py::test_find_day_closed' when='teardown' outcome='passed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'test_auto_kintai.py::test_find_day_closed' when='teardown' outcome='passed'>
+              config: <_pytest.config.Config object at 0x103c4a970>
+          finish pytest_report_teststatus --> ('', '', '') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_runtest_logfinish [hook]
+            nodeid: test_auto_kintai.py::test_find_day_closed
+            location: ('test_auto_kintai.py', 5, 'test_find_day_closed')
+        finish pytest_runtest_logfinish --> [] [hook]
+      finish pytest_runtest_protocol --> True [hook]
+      pytest_runtest_protocol [hook]
+          item: <Function test_generate_today_text>
+          nextitem: <Function test_verify_options_help>
+        pytest_runtest_logstart [hook]
+            nodeid: test_utils.py::test_generate_today_text
+            location: ('test_utils.py', 4, 'test_generate_today_text')
+        finish pytest_runtest_logstart --> [] [hook]
+        pytest_runtest_setup [hook]
+            item: <Function test_generate_today_text>
+        finish pytest_runtest_setup --> [] [hook]
+        pytest_runtest_makereport [hook]
+            item: <Function test_generate_today_text>
+            call: <CallInfo when='setup' result: []>
+        finish pytest_runtest_makereport --> <TestReport 'test_utils.py::test_generate_today_text' when='setup' outcome='passed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'test_utils.py::test_generate_today_text' when='setup' outcome='passed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'test_utils.py::test_generate_today_text' when='setup' outcome='passed'>
+              config: <_pytest.config.Config object at 0x103c4a970>
+          finish pytest_report_teststatus --> ('', '', '') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_runtest_call [hook]
+            item: <Function test_generate_today_text>
+          pytest_pyfunc_call [hook]
+              pyfuncitem: <Function test_generate_today_text>
+          finish pytest_pyfunc_call --> True [hook]
+        finish pytest_runtest_call --> [] [hook]
+        pytest_runtest_makereport [hook]
+            item: <Function test_generate_today_text>
+            call: <CallInfo when='call' result: []>
+        finish pytest_runtest_makereport --> <TestReport 'test_utils.py::test_generate_today_text' when='call' outcome='passed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'test_utils.py::test_generate_today_text' when='call' outcome='passed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'test_utils.py::test_generate_today_text' when='call' outcome='passed'>
+              config: <_pytest.config.Config object at 0x103c4a970>
+          finish pytest_report_teststatus --> ('passed', '.', 'PASSED') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_runtest_teardown [hook]
+            item: <Function test_generate_today_text>
+            nextitem: <Function test_verify_options_help>
+        finish pytest_runtest_teardown --> [] [hook]
+        pytest_runtest_makereport [hook]
+            item: <Function test_generate_today_text>
+            call: <CallInfo when='teardown' result: []>
+        finish pytest_runtest_makereport --> <TestReport 'test_utils.py::test_generate_today_text' when='teardown' outcome='passed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'test_utils.py::test_generate_today_text' when='teardown' outcome='passed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'test_utils.py::test_generate_today_text' when='teardown' outcome='passed'>
+              config: <_pytest.config.Config object at 0x103c4a970>
+          finish pytest_report_teststatus --> ('', '', '') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_runtest_logfinish [hook]
+            nodeid: test_utils.py::test_generate_today_text
+            location: ('test_utils.py', 4, 'test_generate_today_text')
+        finish pytest_runtest_logfinish --> [] [hook]
+      finish pytest_runtest_protocol --> True [hook]
+      pytest_runtest_protocol [hook]
+          item: <Function test_verify_options_help>
+          nextitem: None
+        pytest_runtest_logstart [hook]
+            nodeid: test_utils.py::test_verify_options_help
+            location: ('test_utils.py', 15, 'test_verify_options_help')
+        finish pytest_runtest_logstart --> [] [hook]
+        pytest_runtest_setup [hook]
+            item: <Function test_verify_options_help>
+        finish pytest_runtest_setup --> [] [hook]
+        pytest_runtest_makereport [hook]
+            item: <Function test_verify_options_help>
+            call: <CallInfo when='setup' result: []>
+        finish pytest_runtest_makereport --> <TestReport 'test_utils.py::test_verify_options_help' when='setup' outcome='passed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'test_utils.py::test_verify_options_help' when='setup' outcome='passed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'test_utils.py::test_verify_options_help' when='setup' outcome='passed'>
+              config: <_pytest.config.Config object at 0x103c4a970>
+          finish pytest_report_teststatus --> ('', '', '') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_runtest_call [hook]
+            item: <Function test_verify_options_help>
+          pytest_pyfunc_call [hook]
+              pyfuncitem: <Function test_verify_options_help>
+          finish pytest_pyfunc_call --> True [hook]
+        finish pytest_runtest_call --> [] [hook]
+        pytest_runtest_makereport [hook]
+            item: <Function test_verify_options_help>
+            call: <CallInfo when='call' result: []>
+        finish pytest_runtest_makereport --> <TestReport 'test_utils.py::test_verify_options_help' when='call' outcome='passed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'test_utils.py::test_verify_options_help' when='call' outcome='passed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'test_utils.py::test_verify_options_help' when='call' outcome='passed'>
+              config: <_pytest.config.Config object at 0x103c4a970>
+          finish pytest_report_teststatus --> ('passed', '.', 'PASSED') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_runtest_teardown [hook]
+            item: <Function test_verify_options_help>
+            nextitem: None
+        finish pytest_runtest_teardown --> [] [hook]
+        pytest_runtest_makereport [hook]
+            item: <Function test_verify_options_help>
+            call: <CallInfo when='teardown' result: []>
+        finish pytest_runtest_makereport --> <TestReport 'test_utils.py::test_verify_options_help' when='teardown' outcome='passed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'test_utils.py::test_verify_options_help' when='teardown' outcome='passed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'test_utils.py::test_verify_options_help' when='teardown' outcome='passed'>
+              config: <_pytest.config.Config object at 0x103c4a970>
+          finish pytest_report_teststatus --> ('', '', '') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_runtest_logfinish [hook]
+            nodeid: test_utils.py::test_verify_options_help
+            location: ('test_utils.py', 15, 'test_verify_options_help')
+        finish pytest_runtest_logfinish --> [] [hook]
+      finish pytest_runtest_protocol --> True [hook]
+    finish pytest_runtestloop --> True [hook]
+    pytest_sessionfinish [hook]
+        session: <Session rpa-kot-kintai exitstatus=0 testsfailed=0 testscollected=3>
+        exitstatus: 0
+      pytest_terminal_summary [hook]
+          terminalreporter: <_pytest.terminal.TerminalReporter object at 0x103df3280>
+          exitstatus: 0
+          config: <_pytest.config.Config object at 0x103c4a970>
+      finish pytest_terminal_summary --> [] [hook]
+    finish pytest_sessionfinish --> [] [hook]
+    pytest_unconfigure [hook]
+        config: <_pytest.config.Config object at 0x103c4a970>
+    finish pytest_unconfigure --> [] [hook]

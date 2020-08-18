@@ -2,6 +2,7 @@ from import_proxy import *
 import re
 import os
 
+
 def test_find_day_closed():
     expected = 14
     # given

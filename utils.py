@@ -1,7 +1,9 @@
-import sys, getopt
+import sys
+import getopt
 from datetime import datetime
 
 import constants
+
 
 def generate_today_text():
     now = datetime.now()
@@ -9,10 +11,12 @@ def generate_today_text():
     weekdayNum = now.strftime("%w")
     return dateText + "（" + constants.WEEKDAY_TXTS[weekdayNum] + "）"
 
+
 def verify_options(argv):
     headless = False
     try:
-      opts, args = getopt.getopt(argv,"hs:e:m:",["help","headless","start=","end="])
+        opts, args = getopt.getopt(
+            argv, "hs:e:m:", ["help", "headless", "start=", "end="])
     except getopt.GetoptError:
         print(constants.USAGE)
         sys.exit(2)

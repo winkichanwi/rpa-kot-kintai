@@ -1,5 +1,6 @@
 # coding=utf-8
-import sys, time
+import sys
+import time
 from datetime import datetime
 from getpass import getpass
 from selenium import webdriver
@@ -7,11 +8,13 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 import chromedriver_binary
-import utils, constants
+import utils
+import constants
 from enums import RecordType
 import os
 from os.path import join, dirname
 from dotenv import load_dotenv
+
 
 def read_input():
     employee_id = input("Enter username: wtv3")
@@ -19,11 +22,13 @@ def read_input():
     password = getpass("Enter password: ")
     return (username, password)
 
+
 def set_driver(headless):
     driverOpt = webdriver.ChromeOptions()
     driverOpt.headless = headless
-    driver = webdriver.Chrome(options = driverOpt)
+    driver = webdriver.Chrome(options=driverOpt)
     return driver
+
 
 def login(driver, username, password):
     driver.get("https://s2.kingtime.jp/admin")
@@ -43,7 +48,9 @@ def login(driver, username, password):
     login_button.click()
     return
 
-### Open form
+# Open form
+
+
 def find_today_row_index(day_rows):
     day_texts = []
     for r in day_rows:
@@ -52,6 +59,7 @@ def find_today_row_index(day_rows):
 
     return day_texts.index(today_text)
 
+
 def find_day_closed(driver):
     closed = 0
     statuses = driver.find_elements_by_class_name("specific-status_close")
@@ -59,59 +67,78 @@ def find_day_closed(driver):
         closed += 1 if status.get_attribute('alt') == '済' else 0
     return closed
 
+
 def find_open_timesheet_form_button_index(today_button_option_elements):
     option_texts = []
     for op in today_button_option_elements:
         option_texts.append(op.text)
     return option_texts.index("打刻申請")
 
+
 def open_timesheet_form(driver):
     # assert timesheet page
     time.sleep(0.5)
-    timesheet_page = driver.find_element_by_class_name("htBlock-adjastableTableF_inner")
+    timesheet_page = driver.find_element_by_class_name(
+        "htBlock-adjastableTableF_inner")
     print("Logged in to King of Time.")
 
     day_rows = driver.find_elements_by_class_name("htBlock-scrollTable_day")
     today_row_index = find_today_row_index(day_rows)
     day_closed = find_day_closed(driver)
-    today_button = driver.find_elements_by_class_name("htBlock-selectOther")[today_row_index - day_closed]
-    today_button_option_elements = today_button.find_elements_by_tag_name("option")
-    timesheet_form_option_index = find_open_timesheet_form_button_index(today_button_option_elements)
+    today_button = driver.find_elements_by_class_name(
+        "htBlock-selectOther")[today_row_index - day_closed]
+    today_button_option_elements = today_button.find_elements_by_tag_name(
+        "option")
+    timesheet_form_option_index = find_open_timesheet_form_button_index(
+        today_button_option_elements)
     timesheet_form_button = today_button_option_elements[timesheet_form_option_index]
     timesheet_form_button.click()
     return
 
-### Enter timesheet
+# Enter timesheet
+
+
 def is_application_pending(driver, record_type):
     has_pending_application = False
-    pending_application_table = driver.find_elements_by_class_name("specific-table_1000_wrap")
+    pending_application_table = driver.find_elements_by_class_name(
+        "specific-table_1000_wrap")
     if len(pending_application_table) > 0:
-        pending_record_elements = pending_application_table[0].find_elements_by_tag_name("td")
+        pending_record_elements = pending_application_table[0].find_elements_by_tag_name(
+            "td")
         for e in pending_record_elements:
-            has_pending_application = (record_type.value in e.text) or has_pending_application
+            has_pending_application = (
+                record_type.value in e.text) or has_pending_application
     else:
         has_pending_application = False
     return has_pending_application
+
 
 def find_selected_record_type_option_elements(record_type_menu_elements):
     record_type_option_elements = []
     for m in record_type_menu_elements:
         select = Select(m)
-        record_type_option_elements = record_type_option_elements + select.all_selected_options
+        record_type_option_elements = record_type_option_elements + \
+            select.all_selected_options
     return record_type_option_elements
+
 
 def is_specific_record_type_selected(record_type_menu_elements, record_type):
     is_record_type_selected = False
-    selected_option_elements = find_selected_record_type_option_elements(record_type_menu_elements)
+    selected_option_elements = find_selected_record_type_option_elements(
+        record_type_menu_elements)
     if len(selected_option_elements) > 0:
         for opt in selected_option_elements:
-            is_record_type_selected = (opt.text == record_type.value) or is_record_type_selected
+            is_record_type_selected = (
+                opt.text == record_type.value) or is_record_type_selected
     return is_record_type_selected
+
 
 def is_specific_record_type_applied(driver, record_type_menu_elements, record_type):
     has_pending_application = is_application_pending(driver, record_type)
-    is_record_type_selected = is_specific_record_type_selected(record_type_menu_elements, record_type)
+    is_record_type_selected = is_specific_record_type_selected(
+        record_type_menu_elements, record_type)
     return has_pending_application or is_record_type_selected
+
 
 def enter_records(driver, record_type_menu_elements, records, message):
     available_row_index = []
@@ -121,28 +148,35 @@ def enter_records(driver, record_type_menu_elements, records, message):
         record_type_select_elements.append(select)
         if select.first_selected_option.text == " --選択してください-- ":
             available_row_index.append(i)
-    time_input_elements = driver.find_elements_by_class_name("recording_timestamp_time")
+    time_input_elements = driver.find_elements_by_class_name(
+        "recording_timestamp_time")
     message_input_elements = driver.find_elements_by_class_name("htBlock-text")
     i = 0
     for record_type, time_text in records.items():
         row_index = available_row_index[i]
         # select record type
-        record_type_select_elements[row_index].select_by_visible_text(record_type.value)
+        record_type_select_elements[row_index].select_by_visible_text(
+            record_type.value)
         # input time
         time_input_elements[row_index].send_keys(time_text)
         message_input_elements[row_index].send_keys(message)
-        print("Entered " + record_type.value + " at " + time_text + ", message: " + message + ".")
+        print("Entered " + record_type.value + " at " +
+              time_text + ", message: " + message + ".")
         i += 1
     return
+
 
 def enter_timesheet(driver, opts):
     # assert timesheet form
     time.sleep(0.5)
     timesheet_form = driver.find_elements_by_id("recording_timestamp_table")
 
-    record_type_menu_elements = driver.find_elements_by_class_name("htBlock-selectmenu")
-    should_enter_start_of_work = not(is_specific_record_type_applied(driver, record_type_menu_elements, RecordType.START_OF_WORK))
-    should_enter_end_of_work = not(is_specific_record_type_applied(driver, record_type_menu_elements, RecordType.END_OF_WORK))
+    record_type_menu_elements = driver.find_elements_by_class_name(
+        "htBlock-selectmenu")
+    should_enter_start_of_work = not(is_specific_record_type_applied(
+        driver, record_type_menu_elements, RecordType.START_OF_WORK))
+    should_enter_end_of_work = not(is_specific_record_type_applied(
+        driver, record_type_menu_elements, RecordType.END_OF_WORK))
 
     input_records = {}
     input_records_msg = ""
@@ -174,20 +208,23 @@ def enter_timesheet(driver, opts):
         else:
             print("Today's timesheet is applied already.")
     if len(input_records) > 0:
-        enter_records(driver, record_type_menu_elements, input_records, input_records_msg)
+        enter_records(driver, record_type_menu_elements,
+                      input_records, input_records_msg)
     # submit
     submit_button = driver.find_element_by_class_name("htBlock-buttonSave")
     submit_button.click()
     return
 
-### Main
+# Main
+
+
 def main(argv):
     opts, headless = utils.verify_options(argv)
 
     load_dotenv(join(dirname(__file__), '.env'))
-    username = os.environ.get("USERNAME","")
-    password = os.environ.get("PASSWORD","")
-    
+    username = os.environ.get("USERNAME", "")
+    password = os.environ.get("PASSWORD", "")
+
     if (not(username) or not(password)):
         username, password = read_input()
 
@@ -206,6 +243,7 @@ def main(argv):
             time.sleep(5)
     finally:
         driver.close()
+
 
 if __name__ == "__main__":
     main(sys.argv[1:])
