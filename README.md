@@ -7,8 +7,15 @@ Pythonスクリプトです
 
 2. Install Libraries
 ```
-$ pip install -r requirements.txt
+$ pip install -r requirements.txt --user
+
+# 以下のエラーが出たらこっちで
+#WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1108)'))': /packages/80/d6/4294f0b4bce4de0abf13e17190289f9d0613b0a44e5dd6a7f5ca98459853/selenium-3.141.0-py2.py3-none-any.whl
+#ERROR: Could not install packages due to an EnvironmentError: HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Max retries exceeded with url: /packages/80/d6/4294f0b4bce4de0abf13e17190289f9d0613b0a44e5dd6a7f5ca98459853/selenium-3.141.0-py2.py3-none-any.whl (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1108)')))
+$ pip install -r requirements.txt --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org
+
 ```
+
 ## パスワードを保存したい人
 
 `.env.sample` をコピーして `.env` ファイルを作成します、
@@ -39,6 +46,21 @@ $ python auto-kintai.py -e 19:30 --headless
 `username` は先頭に `wtv3` を付いていることと想定され、社員番号を入力するだけでOK
 
 他のユースケースの実行方法は `--help` で参考してください
+
+
+## unit test
+
+```
+❯ pytest -v
+====================================================== test session starts =======================================================
+platform darwin -- Python 3.8.2, pytest-5.4.2, py-1.8.1, pluggy-0.13.1 -- /Users/xx/.pyenv/versions/3.8.2/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/xx/work/rpa-kot-kintai
+collected 2 items
+
+test_utils.py::test_generate_today_text PASSED                                                                             [ 50%]
+test_utils.py::test_verify_options_help PASSED                                                                             [100%]
+```
 
 ## troubleshooting
 ```

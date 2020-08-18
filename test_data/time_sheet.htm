@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="google" content="notranslate" />
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="msapplication-config" content="none"/>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="google-site-verification" content="xxx" />
+<!-- Data for Google Tag Manager -->
+<script>
+dataLayer = [{
+'pageId' : '/login/login_form',
+'adminId': '',
+'userType': 'unknown',
+'companyId': ''
+}];
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-xxx');</script>
+<!-- End Google Tag Manager -->
+
+<link type="text/css" rel="stylesheet" href="/asset/design1/js/vendor/jquery-ui-1.11.4/jquery-ui.min.css?202008181209">
+<link type="text/css" rel="stylesheet" href="/asset/design1/css/base.kot.css?202008181209">
+<link type="text/css" rel="stylesheet" href="/asset/design1/css/block.kot.css?202008181209">
+<!--
+UIテンプレート範囲外のスタイル用
+class指定のprefixは「specific-」
+-->
+<link type="text/css" rel="stylesheet" href="/asset/design1/css/specific.kot.css?202008181209">
+<!--[if lt IE 10]>
+<link rel="stylesheet" href="/asset/design1/css/ie.kot.css?202008181209">
+<![endif]-->
+<script TYPE="text/javascript">
+<!--
+var jsMsgArray = [];
+jsMsgArray["date_today"]                    = "当日";
+jsMsgArray["date_next"]                     = "翌日";
+jsMsgArray["date_prev"]                     = "前日";
+jsMsgArray["kot_ckdbclick"]                 = "ボタンは一度だけ押して下さい";
+jsMsgArray["tablesort_linkCell"]            = "項目名クリックで並び替えします";
+jsMsgArray["pagingcontrol_display_confirm"] = "表示件数が多い場合には、表示に時間がかかる場合があります。よろしいですか？";
+jsMsgArray["pagingcontrol_confirm_dialog"]  = "登録前に遷移した場合には、編集内容は反映されません。よろしいですか？";
+jsMsgArray["update_string"]                 = "更新";
+jsMsgArray["none_string"] = "なし";
+jsMsgArray["exsists_string"] = "あり";
+jsMsgArray["network_error_string"] = "データ取得に失敗しました";
+jsMsgArray["click_to_detail"] = "詳細はこちら";
+jsMsgArray["validate_string_input_error_message_for_encode"] = "非推奨の文字が入力されています。";
+jsMsgArray["loading_modal_message_default"] = "しばらくお待ちください・・・";
+//--->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>KING OF TIME
+</title>
+<link rel="apple-touch-icon" href="/images/iPhone_home_icon_kot.png">
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/js/kot.js?202008181209"></script>
+<script type="text/javascript" src="/js/cssua.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.cookie.js?202008181209"></script>
+<script type="text/javascript" src="/js/jquery/jquery.kot.translation.js?202008181209"></script>
+<script type="text/javascript">
+(function($) {
+$(document).ready(function(){
+// issue #20886_ログイン画面の連打対応
+// ログインに失敗した場合ログイン用の入力項目を一定時間無効化する
+const saveIdFlag = jQuery.cookie('kot_save_id_flag');
+if(saveIdFlag === "1") {
+$("#save_id").prop("checked", true);
+var id = jQuery.cookie('kot_login_id');
+$("#login_id").val(id);
+$("#login_password").focus();
+}
+else {
+$("#login_id").focus();
+}
+$("#login_button").live("click", function(){
+saveId();
+$("#action_01").click();
+});
+$("#login_id").live("keypress", function(event){
+submitAction(event);
+});
+$("#login_password").live("keypress", function(event){
+submitAction(event);
+});
+translateTimeAndDate(1, "messageDay", "messageTime");
+addBookmarkLink();
+if (navigator.userAgent.match(/Win(dows )?(NT 5\.1|XP)/)) {
+// Windows XP の処理
+$('.warning').append('<div class="htBlock-messageBox"><span class="htBlock-warnA">お使いのOS（Windows XP）は、本サービスのサポート対象外です。</span></div>');
+}
+});
+})(jQuery);
+function submitAction(e) {
+if (!e) {
+var e = window.event;
+}
+if (e.keyCode === 13) {
+$("#action_01").click();
+}
+}
+function saveId() {
+var checked = $("#save_id").prop("checked");
+if(checked) {
+jQuery.cookie('kot_save_id_flag', '1', { expires: 30 })
+var id = $("#login_id").val();
+if (id !== "") {
+jQuery.cookie('kot_login_id', id, { expires: 30 })
+}
+}
+else {
+jQuery.cookie('kot_save_id_flag', null);
+jQuery.cookie('kot_login_id', null)
+}
+}
+function addBookmarkLink() {
+var bookmarkArea = $("#bookmark");
+if(!$(bookmarkArea).attr("id")) return;
+var isOlderFireFox = false;
+if(window.sidebar && window.sidebar.addPanel) {
+//[FireFox lt 23.0]
+isOlderFireFox = true;
+}
+var isIE = false;
+try {
+if(window.external && ('AddFavorite' in window.external)) {
+isIE = true;
+}
+}
+catch(e) {
+return;
+}
+var bookmarkLink = $("<a>").attr("id","bookmark_link").text("お気に入りに登録");
+if(isOlderFireFox || isIE ) {
+$(bookmarkLink).attr("href","#");
+$(bookmarkLink).bind({
+click : function() {
+if(isIE) {
+window.external.AddFavorite(location.href, document.title);
+}
+else if(isOlderFireFox) {
+window.sidebar.addPanel(title, url,"");
+}
+},
+keypress : function() {
+if(isIE) {
+window.external.AddFavorite(location.href, document.title);
+}
+else if(isOlderFireFox) {
+window.sidebar.addPanel(title, url,"");
+}
+}
+});
+$(bookmarkArea).append(bookmarkLink);
+}
+else if(navigator.userAgent.indexOf("Opera") > -1
+|| navigator.userAgent.indexOf("Firefox") > -1) {
+//[opera lt 15.0] or [FireFox gte 23.0]
+$(bookmarkLink).attr("rel","sidebar").attr("href", location.href).attr("title",document.title);
+$(bookmarkArea).append(bookmarkLink);
+}
+}
+</script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="/js/DD_belatedPNG_0.0.8a-min.js?202008181209"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('img, .png_bg');
+</script>
+<![endif]-->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-xxx"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="htBlock-body specific-other_7 specific-other_7_custom">
+<div class="specific-main">
+<div class="specific-loginForm">
+<div class="specific-loginFormInner">
+<img id="logo" src="/asset/design1/img/templates/logo/kot/logo.png" class="specific-kotLogo">
+<form action="https://s2.kingtime.jp/admin" method="post" name="FormName">
+<input type="text" class="htBlock-text specific-inputId" placeholder="ID" id="login_id" name="login_id" onKeyPress="return submitAction(event);">
+<input type="password" class="htBlock-text specific-inputPw" placeholder="パスワード" id="login_password" name="login_password" onKeyPress="return submitAction(event);">
+<div class="specific-saveId save_id">
+<input type="checkbox" class="htBlock-checkbox" id="save_id" value="1" name="save_id">
+<label for="save_id">
+IDを保存する
+</label>
+</div>
+<input name="page_id" type="hidden" value="/login/login_form">
+<input name="page_id" type="hidden" value="/login/login_form">
+<input name="action_id" class="action notranslate" type="submit" value="1" id="action_01" style="display: none;">
+<input id="login_button" class="login_button htBlock-buttonL htBlock-buttonPrimary specific-loginButton" type="button" value="ログイン">
+<a href="?page_id=/login/admin_pass_republish" class="specific-forgotPw save_id">
+パスワードをお忘れの場合
+</a>
+<div class="warning"></div>
+<input name="call_from" type="hidden" value="login_form">
+<input name="request_page" type="hidden" value="">
+</form>
+</div>
+<ol class="specific-notifies"><li class="specific-notifies_message"><div><p class="specific-notifies_message_main">【重要】admin全権管理者のメールアドレスご登録のお願い</p></div><a id="messageLinkUrl" href="https://kotsp.info/announce/K_200722.pdf" onclick="window.open(this.href, ''); return false;"> 詳しくはこちら <img src="/asset/design1/img/templates/btn_arrow_2_R.png"></a></li><li class="specific-notifies_message"><div><p class="specific-notifies_message_main">システムメンテナンス実施のご案内</p><span class="htBlock-info">日時： 2020年 8月 23日（日） <span class="htBlock-info" id="messageTime">11:00 - 最大5時間（16: 00）</span></span></div><a id="messageLinkUrl" href="https://kotsp.info/announce/K_200812.pdf" onclick="window.open(this.href, ''); return false;"> 詳しくはこちら <img src="/asset/design1/img/templates/btn_arrow_2_R.png"></a></li><li class="specific-notifies_message"><div><p class="specific-notifies_message_main">新型コロナウィルス(COVID-19)感染症拡大に伴う、本サービス利用への影響について</p><span class="htBlock-info">2020年 4月 6日（月） </span></div><a id="messageLinkUrl" href="https://kotsp.info/announce/%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A3%E3%83%AB%E3%82%B9(COVID-19)%E6%84%9F%E6%9F%93%E7%97%87%E6%8B%A1%E5%A4%A7%E3%81%AB%E4%BC%B4%E3%81%86%E3%80%81%E6%9C%AC%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E5%88%A9%E7%94%A8%E3%81%B8%E3%81%AE%E5%BD%B1%E9%9F%BF%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.pdf" onclick="window.open(this.href, ''); return false;"> 詳細はこちら <img src="/asset/design1/img/templates/btn_arrow_2_R.png"></a></li><li class="specific-notifies_message"><div><p class="specific-notifies_message_main">雇用調整助成金の申請に役立つ機能のご紹介</p></div><a id="messageLinkUrl" href="https://kotsp.info/announce/雇用調整助成金の申請に役立つ機能のご紹介.pdf" onclick="window.open(this.href, ''); return false;"> 詳細はこちら <img src="/asset/design1/img/templates/btn_arrow_2_R.png"></a></li></ol>
+<!--
+<li class="specific-notifies_message">
+<div>
+<p class="specific-notifies_message_main">
+サーバー証明書切り替えによる影響のご案内（2016年3月8日〜）
+</p>
+</div>
+<a href="#">
+詳細
+<img src="img/templates/btn_arrow_2_R.png">
+</a>
+</li>
+-->
+</div>
+<div class="specific-banner" align="center">
+<td align="center" class="bg_white border_radius">
+</td>
+</div>
+</div>
+<div class="specific-sslSiteSeal">
+<span id="ss_gmo_img_wrapper_100-50_image_ja">
+<a href="https://jp.globalsign.com/" target="_blank" rel="nofollow">
+<img alt="SSL　GMOグローバルサインのサイトシール" border="0" id="ss_img" src="//seal.globalsign.com/SiteSeal/images/gs_noscript_100-50_ja.gif">
+</a>
+</span>
+<script type="text/javascript" src="//seal.globalsign.com/SiteSeal/gmogs_image_100-50_ja.js?0" defer="defer"></script>
+</div>
+<div class="specific-copyright" id="copyright">
+<span>
+Copyright &copy; 2003-<script type="text/javascript">myDate = new Date() ;myYear = myDate.getFullYear ();document.write(myYear);</script> HumanTechnologies, Inc. All Rights Reserved.
+</span>
+</div>
+</div>
+</body>
+</html>

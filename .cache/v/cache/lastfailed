@@ -1,0 +1,5 @@
+{
+  "test_auto-kintai.py": true,
+  "test_auto_kintai.py": true,
+  "test_auto_kintai_import.py": true
+}
