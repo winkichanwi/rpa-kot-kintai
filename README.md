@@ -56,7 +56,7 @@ $ python auto-kintai.py -e 19:30 --headless
 platform darwin -- Python 3.8.2, pytest-5.4.2, py-1.8.1, pluggy-0.13.1 -- /Users/xx/.pyenv/versions/3.8.2/bin/python3
 cachedir: .pytest_cache
 rootdir: /Users/xx/work/rpa-kot-kintai
-collected 2 items                                                                                                                
+collected 2 items
 
 test_utils.py::test_generate_today_text PASSED                                                                             [ 50%]
 test_utils.py::test_verify_options_help PASSED                                                                             [100%]

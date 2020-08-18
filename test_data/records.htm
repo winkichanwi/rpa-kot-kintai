@@ -1,0 +1,5384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="apple-touch-icon" href="/images/iPhone_home_icon_kot.png">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="msapplication-config" content="none"/>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="google-site-verification" content="xxx" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KING OF TIME
+</title>
+<link type="text/css" rel="stylesheet" href="/asset/design1/js/vendor/jquery-ui-1.11.4/jquery-ui.min.css?202008181210">
+<link type="text/css" rel="stylesheet" href="/asset/design1/css/base.kot.css?202008181210">
+<link type="text/css" rel="stylesheet" href="/asset/design1/css/block.kot.css?202008181210">
+<!--
+UIテンプレート範囲外のスタイル用
+class指定のprefixは「specific-」
+-->
+<link type="text/css" rel="stylesheet" href="/asset/design1/css/specific.kot.css?202008181210">
+<script type="text/javascript">
+var ua = navigator.userAgent;
+if(ua.match("Trident") || ua.match("MSIE") ){
+document.write('<link rel="stylesheet" href="\/asset\/design1\/css\/ie.kot.css?202008181210">');
+}
+</script>
+<script src="/asset/design1/js/vendor/jquery-1.11.3.min.js?202008181210"></script>
+<script src="/js/kot.js?202008181210"></script>
+<script type="text/javascript">
+var browserType = KOT_GLOBAL.KOT_LIB.getBrowserType();
+if(browserType <= 110){
+document.write('<script src="\/asset\/design1\/js\/vendor\/flexibility.js?202008181210"><\/script>');
+}
+if(browserType <= 109){
+$(document).ready(function() {
+$(".specific-htBlock-dialog-body").scroll(function() {
+var pos = $(this).scrollTop();
+var posPrev = pos;
+var dialog = this;
+var id = setInterval(function(){
+posPrev = pos;
+pos = $(dialog).scrollTop();
+if(pos == posPrev){
+$(dialog).hide().show();
+$(dialog).scrollTop(pos);
+clearInterval(id);
+}
+},500);
+});
+});
+}
+</script>
+<script TYPE="text/javascript">
+<!--
+var jsMsgArray = [];
+jsMsgArray["date_today"]                    = "当日";
+jsMsgArray["date_next"]                     = "翌日";
+jsMsgArray["date_prev"]                     = "前日";
+jsMsgArray["kot_ckdbclick"]                 = "ボタンは一度だけ押して下さい";
+jsMsgArray["tablesort_linkCell"]            = "項目名クリックで並び替えします";
+jsMsgArray["pagingcontrol_display_confirm"] = "表示件数が多い場合には、表示に時間がかかる場合があります。よろしいですか？";
+jsMsgArray["pagingcontrol_confirm_dialog"]  = "登録前に遷移した場合には、編集内容は反映されません。よろしいですか？";
+jsMsgArray["update_string"]                 = "更新";
+jsMsgArray["none_string"] = "なし";
+jsMsgArray["exsists_string"] = "あり";
+jsMsgArray["network_error_string"] = "データ取得に失敗しました";
+jsMsgArray["click_to_detail"] = "詳細はこちら";
+jsMsgArray["validate_string_input_error_message_for_encode"] = "非推奨の文字が入力されています。";
+jsMsgArray["loading_modal_message_default"] = "しばらくお待ちください・・・";
+jsMsgArray["validate_number_input_error_message_upper_bound"] = "法定上限規制基準を超えた値を入力しています。";
+jsMsgArray["employee_recording_msg_confirm"]           = " の処理を行ってよろしいですか？";
+jsMsgArray["employee_recording_msg_complete_process"]  = " の処理が完了しました。";
+jsMsgArray["employee_recording_msg_common_error"]      = "打刻処理中にエラーが発生しました。";
+jsMsgArray["employee_recording_title_confirm"]         = "確認";
+jsMsgArray["employee_recording_title_complete"]        = "完了";
+jsMsgArray["employee_recording_title_error"]           = "エラー";
+jsMsgArray["employee_recording_button_text_yes"]       = "はい";
+jsMsgArray["employee_recording_button_text_no"]        = "いいえ";
+jsMsgArray["employee_recording_button_text_close"]     = "閉じる";
+jsMsgArray["employee_recording_type_workin"]           = "出勤";
+jsMsgArray["employee_recording_type_workout"]          = "退勤";
+jsMsgArray["employee_recording_type_breakin"]          = "休憩開始";
+jsMsgArray["employee_recording_type_breakout"]         = "休憩終了";
+jsMsgArray["employee_recording_type_outout"]           = "外出開始";
+jsMsgArray["employee_recording_type_outin"]            = "外出終了";
+var globalTemp = window.KOT_GLOBAL || {};
+globalTemp.HT_LIB_I18N = {
+"htlib_001": "1月",
+"htlib_002": "2月",
+"htlib_003": "3月",
+"htlib_004": "4月",
+"htlib_005": "5月",
+"htlib_006": "6月",
+"htlib_007": "7月",
+"htlib_008": "8月",
+"htlib_009": "9月",
+"htlib_010": "10月",
+"htlib_011": "11月",
+"htlib_012": "12月",
+"htlib_013": "日",
+"htlib_014": "月",
+"htlib_015": "火",
+"htlib_016": "水",
+"htlib_017": "木",
+"htlib_018": "金",
+"htlib_019": "土",
+"htlib_020": "",
+"htlib_021": "",
+"htlib_022": "行をクリックして操作"
+};
+window.KOT_GLOBAL = globalTemp;
+//--->
+</script>
+
+<!-- Data for Google Tag Manager -->
+<script>
+dataLayer = [{
+'pageId' : '/working/monthly_individual_working_list_custom',
+'adminId': '',
+'userType': 'employee',
+'companyId': '1200005601'
+}];
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-xxx');</script>
+<!-- End Google Tag Manager -->
+
+<script type="text/javascript" src="/asset/design1/js/KOT_ExcelOut.jquery.js?202008181210"></script>
+<script type="text/javascript">
+function init() {
+setViewWeeklyAmountCondition();
+$("#help_link_for_flex").attr("href", "https://help.kingtime.jp/h-t/web/Detail.aspx?id=xxx").attr("target", "_blank").text(jsMsgArray["click_to_detail"]);
+//タイムカード、EXCEL出力のセレクトを切り替えた場合にはボタンを出しわける
+$(document).on("change", "#export_timecard_select", function() {
+var value = $(this).val();
+if(value === "TIMECARD") {
+$("#excel_out_button").hide();
+$("#export_timecard_button").show();
+}
+else {
+$("#export_timecard_button").hide();
+$("#excel_out_button").show();
+}
+});
+//タイムカード、EXCELセレクトボックス横の出力ボタンをクリックした場合の操作（タイムカード選択時）
+$(document).on("click","#export_timecard_button", function() {
+KOT_GLOBAL.KOT_LIB.makeHiddenByFormId("export_one_employee_id", 1200123456, "export_timecard_form");
+$("#button_07").click();
+});
+$("#excel_out_button").KOT_ExcelOut({
+backgroundTarget : "/background/xxx",
+currentPageId : "/working/monthly_individual_working_list_custom",
+companyId : "1200001234",
+administratorId : "",
+employeeId : "1200123456",
+removeTargetSelector : ["#header_main_menu", "#footer_main_menu"],
+numberToString : "1",
+messages: {
+loading: "処理中・・・",
+download: "ダウンロード",
+error: "エラーが発生しました"
+}
+});
+}
+function setViewWeeklyAmountCondition(){
+if (document.myForm[0].view_weekly_amount != null) {
+if (document.myForm[0].selected_time_division_id == null ||
+document.myForm[0].selected_time_division_id.value == "") {
+document.myForm[0].view_weekly_amount.disabled = false;
+} else {
+document.myForm[0].view_weekly_amount.disabled = true;
+}
+}
+}
+function setRequestType(requestType, flagId) {
+var requestTypeParm = document.getElementById(flagId);
+if(requestType == 1) {
+requestTypeParm.value = 1;
+}else if(requestType == 3){
+requestTypeParm.value = 3;
+}else {
+requestTypeParm.value = 2;
+}
+}
+$(document).ready(function(){
+submitButtonArray = new Array("display_button","excel_export","before_month","next_month");
+init();
+if(submitButtonArray && submitButtonArray.length > 0) {
+timerId = setTimeout('timewaitWithButton(\'\', 0, 1, 1)', 0);
+}
+});
+</script>
+</head>
+<body>
+<div class="htBlock-body specific-pattern_c specific-pattern_c_custom specific-other_9 specific-other_9_custom specific-working_info_test">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-xxx"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="htBlock-header" id="header_main_menu">
+<div class="htBlock-header_inner">
+<div class="htBlock-header_menuButton htBlock-header_menuButtonImg-for-employee menu-main">
+<p>
+<a href="#">
+<img src="/asset/design1/img/templates/header_Hamburger.png">
+メニュー
+</a>
+</p>
+</div>
+<div class="htBlock-header_spacer">
+</div>
+<div class="htBlock-header_userInfo">
+<div class="htBlock-header_userInfo_inner">
+<span>
+<!--<img class="htBlock-header_userInfo_thumb" src="/asset/design1/img/templates/header_user.png">-->
+<p class="htBlock-header_userInfo_name">
+&nbsp;001234 山田 太郎
+</p>
+<p class="htBlock-header_userInfo_company">&nbsp;wtv&nbsp;株式会社ビズリーチ</p>
+</span>
+</div>
+</div>
+<div class="htBlock-header_logoutButton" onclick="location.href='/admin/xxx?page_id=/login/do_logout'">
+<p>
+<a href="#">
+<img src="/asset/design1/img/templates/header_icon_logout.png">
+ログアウト
+</a>
+</p>
+</div>
+</div><!-- end class="htBlock-header_inner" -->
+<div class="htBlock-header_menuBody" style="display:none;">
+<div class="htBlock-header_menuBody_title">
+<h2>メニュー
+</h2>
+</div>
+<table class="htBlock-header_menuBody_inner">
+<tr>
+<td>
+<h3>勤務データ</h3>
+<a href="/admin/xxx?page_id=/working/monthly_individual_working_list_custom" >タイムカード</a>
+</td>
+<td>
+<h3>スケジュール</h3>
+<a href="/admin/xxx?page_id=/schedule/schedule_pattern_list_for_employee&employee_id=1200123456" >利用できるスケジュールパターン</a>
+</td>
+<td>
+<h3>その他</h3>
+<a href="/admin/xxx?page_id=/employee/request_list&employee_id=1200123456" >申請履歴（過去60日）</a>
+<a href="/admin/xxx?page_id=/employee/change_password" >パスワード変更</a>
+</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript">
+(function($){
+})(jQuery);
+</script>
+</div><!-- end htBlock-header -->
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<h1 class="htBlock-pageTitle">
+<img src="/asset/design1/img/templates/day_month_year/size-s/top_menubtn-s_monthly-working-summary_08.png">
+<span>
+タイムカード(カスタム)
+</span>
+<span>
+<a href="javascript:openHelpNew('https://kotsp.info/support/PDF_for_Help/monthly_individual_working_list_custom2.pdf');" style="vertical-align: middle;"> <img src="/asset/design1/img/templates/title_link_help_icon_20px.png"> </a>
+</span>
+</h1>
+  <form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<div class="htBlock-headerPanel" data-ht-open data-ht-opt="duration:100">
+<h3>表示条件の指定</h3>
+<div class="htBlock-headerPanel_content">
+<div class="htBlock-headerPanel_content_input">
+<div class="htBlock-headerPanel_content_row">
+<label>従業員：</label>
+<p>
+<span>
+1234567890_所属グループ
+</span>
+ / 
+<span>
+正社員_FT
+</span>
+ / 
+<span>
+001234&nbsp;山田 太郎
+</span>
+</p>
+</div>
+<div class="htBlock-headerPanel_content_row">
+<label>従業員グループ:</label>
+<p>
+<span>
+201001入社&nbsp;</span>
+</p>
+</div>
+<div class="htBlock-headerPanel_content_row">
+<label>表示月:</label>
+<p>
+<input type="text" id="select_year_month_picker" class="htBlock-calendarMonth for_get_list_condition" value="2020/08">
+<input type="hidden" name="year" id="year" value="2020">
+<input type="hidden" name="month" id="month" value="08">
+<script type="text/javascript">
+(function($){
+var _vmYearMonthSelectValue;
+$(document).ready(function(){
+var pickerId = "#" + "select_year_month_picker";
+// [yyyy/MM] または [yyyyMM] を許容
+var reg = /^(\d{4})\/?(0[1-9]|1[0-2])$/;
+$(pickerId).focus(function() {
+_vmYearMonthSelectValue = $(this).val();
+});
+$(pickerId).change(function() {
+var inputVal = $(this).val();
+if(!reg.test(inputVal)) {
+return $(this).val(_vmYearMonthSelectValue);
+}
+var year,month;
+if(inputVal.length === 7) {
+var array = inputVal.split("/");
+year = array[0];
+month = array[1];
+}
+else {
+year = inputVal.substring(0,4);
+month = inputVal.substring(4);
+}
+$("#" + "year").val(year);
+$("#" + "month").val(month);
+$(this).val(year + "/" + month);
+});
+});
+})(jQuery);
+</script>
+<input name="before_month" type="submit" value="&lt;&lt;" id="before_month" class="list_condition_date_change" style="display:none;">
+<input name="next_month" type="submit" value="&gt;&gt;" id="next_month" class="list_condition_date_change" style="display:none;">
+</p>
+</div>
+</div>
+<div class="htBlock-headerPanel_content_submit">
+<input type="submit" id="display_button" class="htBlock-buttonM htBlock-buttonPrimary specific-show" value="表示">
+</div>
+</div><!-- end class="htBlock-headerPanel_content" -->
+</div><!-- end class="htBlock-headerPanel" -->
+<input name="date_selection_type" type= "hidden" value="1">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="selected_section_id" type="hidden" id="page_id2" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="">
+<input name="year" type="hidden" id="selected_year" value="">
+<input name="month" type="hidden" id="selected_month" value="">
+<input name="update_key" type="hidden" value="0.6247651184382792">
+<input name="date_selection_type" type="hidden" value="1">
+<input name="disable_check_point" type="hidden" value="">
+<input name="disable_menu" type="hidden" value="">
+<!-- 個人別タイムカード -->
+<input name="action_id" class="action" type="submit" value="10" id="action_10" style="display:none;" onclick="make_hidden('excel_out_flag', 0);">
+<!-- 個人別カウント集計 -->
+<input name="action_id" class="action" type="submit" value="14" id="action_14" style="display:none;" onclick="make_hidden('excel_out_flag', 0);">
+</form>
+<div class="htBlock-mainContents">
+<h2>
+<span>
+2020/08/01<span class="htBlock-subHeading">(土)</span>
+～
+2020/08/31<span class="htBlock-subHeading">(月)</span>
+</span>
+<div class="htBlock-group specific-button_selectDate">
+<div>
+<button id="button_before_month" type="button" class="htBlock-button htBlock-buttonNormalOut">
+<img src="/asset/design1/img/templates/btn_arrow_2_L.png">
+</button>
+<button id="button_current_month" type="button" class="htBlock-button htBlock-buttonNormalOut">
+今月
+</button>
+<button id="button_next_month" type="button" class="htBlock-button htBlock-buttonNormalOut">
+<img src="/asset/design1/img/templates/btn_arrow_2_R.png">
+</button>
+</div>
+</div>
+<script type="text/javascript">
+(function($){
+$(function(){
+//初期表示時の年月
+var defaultYear = $("#year").val();
+var defaultMonth = $("#month").val();
+$(document).on("click", "#button_before_month", function() {
+$("#year").val(defaultYear);
+$("#month").val(defaultMonth);
+$("#before_month").click();
+});
+$(document).on("click", "#button_next_month", function() {
+$("#year").val(defaultYear);
+$("#month").val(defaultMonth);
+$("#next_month").click();
+});
+$(document).on("click", "#button_current_month", function() {
+var year = "2020";
+var month = "08";
+$("#year").val(year);
+$("#month").val(month);
+$("#display_button").click();
+});
+});
+})(jQuery);
+</script>
+</h2>
+<div class="htBlock-box specific-box">
+<div class="htBlock-toolbar specific-toolbar">
+<div style="display:inline-flex">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="3" id="action_03120012345601" style="display: none;">
+<button id="button_03120012345601" type="button" class=" htBlock-buttonPrimary   htBlock-buttonM " onClick="onClickActionButton('action_03120012345601');">
+<span>スケジュール申請</span>
+</button>
+<!--勤怠確認ずみ-->
+ 
+<input name="date_selection_type" type= "hidden" value="1">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="selected_section_id" type="hidden" id="page_id2" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="">
+<input name="year" type="hidden" id="selected_year" value="">
+<input name="month" type="hidden" id="selected_month" value="">
+<input name="update_key" type="hidden" value="0.123">
+<input name="date_selection_type" type="hidden" value="1">
+<input name="disable_check_point" type="hidden" value="">
+<input name="disable_menu" type="hidden" value="">
+<input name="selected_start_date" type="hidden" value="20200801">
+<input name="selected_end_date" type="hidden" value="20200831">
+<input name="selected_section" type="hidden" value="900043972">
+<input name="selected_employee_id" type="hidden" value="1200123456">
+<input name="selected_output_type" type="hidden" value="pdf_landscape">
+<input name="nocheck_duplication" type="hidden" value="1">
+<input name="valid_variational_working" type="hidden" value="1">
+<input name="timecard_exporter_id" type="hidden" value="1200008418">
+<input name="selected_working_type_array" type="hidden" value="1200021831">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" id="export_timecard_form" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="xxx">
+<input name="action_id" class="action notranslate" type="submit" value="7" id="action_07" style="display: none;">
+<input name="action_button" class="action_button" type="button" value="タイムカード出力" id="button_07" style="margin:0px; display:none;" onClick="make_hidden('excel_out_flag', 0);onClickActionButton('action_07');">
+<select id="export_timecard_select" class="htBlock-selectmenu">
+<option value="TIMECARD">タイムカード</option>
+<option value="EXCEL">EXCEL</option>
+</select>
+<button type="button" id="export_timecard_button" class="htBlock-buttonM htBlock-buttonNormal">
+出力
+</button>
+<button id="excel_out_button" type="button" class="htBlock-buttonM htBlock-buttonNormal"  style="display:none;" >
+出力
+</button>
+<input name="date_selection_type" type= "hidden" value="1">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="selected_section_id" type="hidden" id="page_id2" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="">
+<input name="year" type="hidden" id="selected_year" value="">
+<input name="month" type="hidden" id="selected_month" value="">
+<input name="update_key" type="hidden" value="0.123">
+<input name="date_selection_type" type="hidden" value="1">
+<input name="disable_check_point" type="hidden" value="">
+<input name="disable_menu" type="hidden" value="">
+<input name="selected_start_date" type="hidden" value="20200801">
+<input name="selected_end_date" type="hidden" value="20200831">
+<input name="selected_section" type="hidden" value="900043972">
+<input name="selected_employee_id" type="hidden" value="1200123456">
+<input name="selected_output_type" type="hidden" value="pdf_landscape">
+<input name="nocheck_duplication" type="hidden" value="1">
+<input name="valid_variational_working" type="hidden" value="1">
+<input name="timecard_exporter_id" type="hidden" value="1200001234">
+<input name="selected_working_type_array" type="hidden" value="1200012345">
+</form>
+</div>
+<div></div>
+</div><!-- end  class="htBlock-toolbar specific-toolbar" -->
+<div class="face_template">
+</div>
+<h4 class="htBlock-box_subTitle">月別データ</h4>
+  
+<h5 class="htBlock-box_caption">時間集計</h5>
+<div class="htBlock-normalTable specific-table">
+<table class="specific-table_800">
+<thead>
+<tr>
+<th class="custom1">
+<p>
+総労働時間
+</p>
+</th>
+<th class="custom2">
+<p>
+【フレックス】<br/>基準不足時間
+</p>
+</th>
+<th class="custom3">
+<p>
+【フレックス】<br/>残業時間合計
+</p>
+</th>
+<th class="custom4">
+<p>
+深夜時間合計　
+</p>
+</th>
+<th class="custom5">
+<p>
+割増時間①
+</p>
+</th>
+<th class="custom6">
+<p>
+割増時間②
+</p>
+</th>
+<th class="custom7">
+<p>
+【固定時間制】<br/>残業時間合計
+</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+
+<td class="custom1" >
+80.03
+</td>
+<td class="custom2" style="background:#ffcc99;"
+>
+79.57
+</td>
+<td class="custom3" >
+&nbsp;
+</td>
+<td class="custom4" >
+&nbsp;
+</td>
+<td class="custom5" >
+&nbsp;
+</td>
+<td class="custom6" >
+&nbsp;
+</td>
+<td class="custom7" >
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div><!-- end  class="htBlock-normalTable specific-table"  時間集計 -->
+  
+  
+<h5 class="htBlock-box_caption" style="display: inline-block;">フレックスタイム集計</h5>
+<p class="htBlock-header_userInfo_company" style="display: inline-block;"><a id="help_link_for_flex"></a></p>
+<div class="htBlock-normalTable specific-table">
+<table class="specific-table_1200">
+<thead>
+<th title="「月別基準時間設定」で設定した「変形労働の基準時間」です。"><p>元の基準時間</p></th>
+<th colspan=1 title="清算期間内で繰越した時間です。"><p>前月までの繰越時間</p></th>
+<th title="月初め時点の残りの基準時間の合計です。"><p>月初の残基準時間</p></th>
+<th title="繰越後の基準時間です。清算期間の最終月では変動することがあります。"><p>当月の基準時間</p></th>
+<th title="「月別基準時間設定」で設定した「当月精算する基準時間」です。"><p>当月精算の基準時間</p></th>
+<th title="「当月の基準時間」内の労働時間です。&#13;不足した場合は「当月に労働したとみなされる時間」を含んでいます。"><p>基準内労働時間</p></th>
+<th title="清算期間の最終月に繰り越せる時間です。"><p>繰越時間</p></th>
+<th title="当月精算する残業時間です（「当月精算の基準時間」を超えた時間です）。"><p>基準外労働時間</p></th>
+<th title="当月精算する割増残業時間です。"><p>割増対象時間</p></th>
+</thead>
+<tbody>
+<tr>
+<td rowspan=1>160.00</td>
+<td>--</td>
+<td rowspan=1>160.00</td>
+<td rowspan=1>160.00</td>
+<td rowspan=1 class="htBlock-normalTable_splitter">
+--
+</td>
+<td rowspan=1>80.03</td>
+<td rowspan=1>
+
+</td>
+<td rowspan=1></td>
+<td rowspan=1></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5 class="htBlock-box_caption">日数集計</h5>
+<div class="htBlock-autoNewLineTable specific-autoNewLineTable specific-other_9-customHeaderLabel">
+<ul class="specific-daysCount_1">
+<li>
+<label class="work_count" style="height: 20px">平日</label>
+<div class="work_count" >9.0</div>
+</li>
+<li>
+<label class="holiday_work_count" style="height: 20px">休日</label>
+<div class="holiday_work_count" >0.0</div>
+</li>
+<li>
+<label class="late_early_leave_count" style="height: 20px">遅刻</label>
+<div class="late_early_leave_count" >0</div>
+</li>
+<li>
+<label class="late_early_leave_count" style="height: 20px">早退</label>
+<div class="late_early_leave_count" >0</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">年次有給休暇</label>
+<div class="holiday_count" >
+0.0
+/ 0H
+(残&nbsp;13.0 )
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">--</label>
+<div class="holiday_count" >
+0.0
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">欠勤</label>
+<div class="holiday_count" >
+0.0
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">夏季</label>
+<div class="holiday_count" >
+0.0
+(残&nbsp;3.0 )
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">振休</label>
+<div class="holiday_count" >
+0.0
+(残&nbsp;0.0 )
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">ｱﾆﾊﾞｰｻﾘ-</label>
+<div class="holiday_count" >
+0.0
+(残&nbsp;1.0 )
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">特別</label>
+<div class="holiday_count" >
+0.0
+(残&nbsp;0.0 )
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">子の看護</label>
+<div class="holiday_count" >
+0.0
+(残&nbsp;0.0 )
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">家族の介護</label>
+<div class="holiday_count" >
+0.0
+(残&nbsp;0.0 )
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">生理</label>
+<div class="holiday_count" >
+0.0
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">母性健康</label>
+<div class="holiday_count" >
+0.0
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">産育</label>
+<div class="holiday_count" >
+0.0
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">介護</label>
+<div class="holiday_count" >
+0.0
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">私傷病</label>
+<div class="holiday_count" >
+0.0
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">慶弔（忌引）</label>
+<div class="holiday_count" >
+0.0
+(残&nbsp;0.0 )
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">慶弔（出産）</label>
+<div class="holiday_count" >
+0.0
+(残&nbsp;0.0 )
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">慶弔（婚姻）</label>
+<div class="holiday_count" >
+0.0
+(残&nbsp;0.0 )
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">裁判員</label>
+<div class="holiday_count" >
+0.0
+(残&nbsp;0.0 )
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">-</label>
+<div class="holiday_count" >
+0.0
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">代休</label>
+<div class="holiday_count" >
+0.0
+/ 0H
+(残&nbsp;0.0 )
+</div>
+</li>
+<li>
+<label class="holiday_count" style="height: 20px">特別（自宅待機）</label>
+<div class="holiday_count" >
+0.0
+/ 0H
+(残&nbsp;0.0 )
+</div>
+</li>
+<li>
+<button type="button" class="htBlock-button htBlock-buttonNormal" onclick="javascript:openWindowForPrint('/admin/xxx', '/setup/day_count_employee&employee_id=1200123456&disable_menu=&sub_window=1&fiscal_year=2020','$product_code');">
+休暇詳細表示
+</button>
+</li>
+</ul>
+</div><!-- end  class="htBlock-autoNewLineTable specific-autoNewLineTable" 日数集計 -->
+  
+  
+<h4 class="htBlock-box_subTitle">日別データ</h4>
+<div class="htBlock-adjastableTableF">
+<div class="htBlock-adjastableTableF_inner">
+<table>
+<thead>
+<tr>
+<th class="htBlock-adjastableTableF_actionRow">
+<p>申請</p>
+</th>
+<th class="specific_date"  data-ht-sort-type="string" data-ht-sort-index="FULL_DATE" ><p>日付</p></th>
+<th class="specific_close_status"><p>締</p></th>
+<th class="schedule specific_name"  data-ht-sort-type="string" data-ht-sort-index="SCHEDULE" ><p>スケジュール</p></th>
+<th class="work_day_type specific_name"  data-ht-sort-type="string" data-ht-sort-index="WORK_DAY_TYPE" ><p>勤務日<br>種別</p></th>
+<th class="start_end_timerecord specific_record"  data-ht-sort-type="string" data-ht-sort-index="START_TIMERECORD" ><p>出勤</p></th>
+<th class="start_end_timerecord specific_record"  data-ht-sort-type="string" data-ht-sort-index="END_TIMERECORD" ><p>退勤</p></th>
+  
+<th class="custom1 specific_time"  data-ht-sort-type="float" data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+休憩
+</p>
+</th>
+<th class="custom2 specific_time"  data-ht-sort-type="float" data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+残業
+</p>
+</th>
+<th class="custom3 specific_time"  data-ht-sort-type="float" data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+深夜
+</p>
+</th>
+<th class="custom4 specific_time"  data-ht-sort-type="float" data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+休日
+</p>
+</th>
+<th class="custom5 specific_time"  data-ht-sort-type="float" data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+年休
+</p>
+</th>
+<th class="custom6 specific_time"  data-ht-sort-type="float" data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+遅刻
+</p>
+</th>
+<th class="custom7 specific_time"  data-ht-sort-type="float" data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+早退
+</p>
+</th>
+<th class="custom8 specific_time"  data-ht-sort-type="float" data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+総労働時間
+</p>
+</th>
+  
+<th class="remark"  data-ht-sort-type="string" data-ht-sort-index="REMARK" ><p>備考</p></th>
+</tr>
+</thead>
+<tbody>
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345601">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345601">スケジュール申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05120012345601" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_01_1')">
+<button id="button_05120012345601" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345601');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_01" id="request_one_day_schedule_flag_01_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200801">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="01">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000004494979">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345601" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_01_2')">
+<button id="button_05_schdule_120012345601" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345601');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_01" id="request_one_day_schedule_flag_01_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200801">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="01">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000004494979">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day htBlock-scrollTable_saturday " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/01（土）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#;;background:#;"   data-ht-sort-index="SCHEDULE" >
+<p>
+--
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+法定外休日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr  class="htBlock-vrCalendarTable_weekstart" >
+<td  class="htBlock-adjastableTableF_actionRow">
+</td>
+<td  class="htBlock-scrollTable_day htBlock-scrollTable_sunday " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/02（日）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+<img src="/asset/design1/img/templates/check16px.png" class="specific-status_close" style="width:16px; height:16px;" alt="済">
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#;;background:#;"   data-ht-sort-index="SCHEDULE" >
+<p>
+--
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+法定休日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/03（月）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+<img src="/asset/design1/img/templates/check16px.png" class="specific-status_close" style="width:16px; height:16px;" alt="済">
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#000000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+09:41<br>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+19:18<br>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+1.00
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+8.37
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/04（火）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+<img src="/asset/design1/img/templates/check16px.png" class="specific-status_close" style="width:16px; height:16px;" alt="済">
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#000000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+09:11<br>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+17:55<br>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+1.00
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+7.44
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/05（水）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+<img src="/asset/design1/img/templates/check16px.png" class="specific-status_close" style="width:16px; height:16px;" alt="済">
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#000000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+09:11<br>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+19:04<br>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+1.00
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+8.53
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/06（木）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+<img src="/asset/design1/img/templates/check16px.png" class="specific-status_close" style="width:16px; height:16px;" alt="済">
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#000000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+09:27<br>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+19:07<br>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+1.00
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+8.40
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/07（金）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+<img src="/asset/design1/img/templates/check16px.png" class="specific-status_close" style="width:16px; height:16px;" alt="済">
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#000000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+09:31<br>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+18:40<br>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+1.00
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+8.09
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+</td>
+<td  class="htBlock-scrollTable_day htBlock-scrollTable_saturday " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/08（土）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+<img src="/asset/design1/img/templates/check16px.png" class="specific-status_close" style="width:16px; height:16px;" alt="済">
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#;;background:#;"   data-ht-sort-index="SCHEDULE" >
+<p>
+--
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+法定外休日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr  class="htBlock-vrCalendarTable_weekstart" >
+<td  class="htBlock-adjastableTableF_actionRow">
+</td>
+<td  class="htBlock-scrollTable_day htBlock-scrollTable_sunday " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/09（日）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+<img src="/asset/design1/img/templates/check16px.png" class="specific-status_close" style="width:16px; height:16px;" alt="済">
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#;;background:#;"   data-ht-sort-index="SCHEDULE" >
+<p>
+--
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+法定休日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+</td>
+<td  class="htBlock-scrollTable_day htBlock-scrollTable_sunday " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/10（月）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+<img src="/asset/design1/img/templates/check16px.png" class="specific-status_close" style="width:16px; height:16px;" alt="済">
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#;;background:#;"   data-ht-sort-index="SCHEDULE" >
+<p>
+--
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+法定外休日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/11（火）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+<img src="/asset/design1/img/templates/check16px.png" class="specific-status_close" style="width:16px; height:16px;" alt="済">
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#000000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+09:18<br>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+19:31<br>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+1.00
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+9.13
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p>miss</p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/12（水）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+<img src="/asset/design1/img/templates/check16px.png" class="specific-status_close" style="width:16px; height:16px;" alt="済">
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#000000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+09:46<br>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+21:50<br>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+1.00
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+11.04
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/13（木）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+<img src="/asset/design1/img/templates/check16px.png" class="specific-status_close" style="width:16px; height:16px;" alt="済">
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#000000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+09:25<br>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+18:26<br>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+1.00
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+8.01
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/14（金）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+<img src="/asset/design1/img/templates/check16px.png" class="specific-status_close" style="width:16px; height:16px;" alt="済">
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#000000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+09:33<br>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+20:15<br>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+1.00
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+9.42
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+</td>
+<td  class="htBlock-scrollTable_day htBlock-scrollTable_saturday " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/15（土）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+<img src="/asset/design1/img/templates/check16px.png" class="specific-status_close" style="width:16px; height:16px;" alt="済">
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#;;background:#;"   data-ht-sort-index="SCHEDULE" >
+<p>
+--
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+法定外休日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr  class="htBlock-vrCalendarTable_weekstart" >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345616">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345616">スケジュール申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="xxx">
+<input name="action_id" type="submit" value="2" id="action_05120012345616" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_16_1')">
+<button id="button_05120012345616" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345616');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_16" id="request_one_day_schedule_flag_16_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200816">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="16">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000008340918">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345616" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_16_2')">
+<button id="button_05_schdule_120012345616" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345616');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_16" id="request_one_day_schedule_flag_16_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200816">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="16">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000008340918">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day htBlock-scrollTable_sunday " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/16（日）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#;;background:#;"   data-ht-sort-index="SCHEDULE" >
+<p>
+--
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+法定休日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345617">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345617">スケジュール申請</option>
+<option value="#button_05_overtime_120012345617">時間外勤務申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05120012345617" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_17_1')">
+<button id="button_05120012345617" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345617');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_17" id="request_one_day_schedule_flag_17_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200817">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="17">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000008614893">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345617" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_17_2')">
+<button id="button_05_schdule_120012345617" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345617');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_17" id="request_one_day_schedule_flag_17_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200817">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="17">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000008614893">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="16" id="action_05_overtime_120012345617" style="display: none;" onClick="setRequestType(4, 'request_one_day_schedule_flag_17_4')">
+<button id="button_05_overtime_120012345617" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_overtime_120012345617');">
+<span>時間外勤務申請</span>
+</button>
+<input name="request_one_day_schedule_flag_17" id="request_one_day_schedule_flag_17_4" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200817">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="17">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000008614893">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day specific-uncomplete" title="エラー勤務です。"  data-ht-sort-index="FULL_DATE" >
+<p>
+08/17（月）
+<img src="/asset/design1/img/templates/error16px.png" class="specific-status_close" style="width:16px; height:16px; display: inline;" alt="エラー">
+</p>
+</td>
+<td  class="close_status specific-align_center specific-uncomplete" title="エラー勤務です。">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type specific-uncomplete" title="エラー勤務です。"  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord specific-uncomplete"  title="エラー勤務です。"  data-ht-sort-index="START_TIMERECORD" >
+<p>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+09:31<br>
+</p>
+</td>
+<td class="start_end_timerecord specific-uncomplete"  title="エラー勤務です。"  data-ht-sort-index="END_TIMERECORD" >
+<p>
+<span class="specific-requested">[申]</span>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left specific-uncomplete"  title="エラー勤務です。"  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345618">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345618">スケジュール申請</option>
+<option value="#button_05_overtime_120012345618">時間外勤務申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05120012345618" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_18_1')">
+<button id="button_05120012345618" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345618');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_18" id="request_one_day_schedule_flag_18_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200818">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="18">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000008895387">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345618" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_18_2')">
+<button id="button_05_schdule_120012345618" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345618');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_18" id="request_one_day_schedule_flag_18_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200818">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="18">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000008895387">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="16" id="action_05_overtime_120012345618" style="display: none;" onClick="setRequestType(4, 'request_one_day_schedule_flag_18_4')">
+<button id="button_05_overtime_120012345618" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_overtime_120012345618');">
+<span>時間外勤務申請</span>
+</button>
+<input name="request_one_day_schedule_flag_18" id="request_one_day_schedule_flag_18_4" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200818">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="18">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000008895387">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day specific-uncomplete" title="エラー勤務です。"  data-ht-sort-index="FULL_DATE" >
+<p>
+08/18（火）
+<img src="/asset/design1/img/templates/error16px.png" class="specific-status_close" style="width:16px; height:16px; display: inline;" alt="エラー">
+</p>
+</td>
+<td  class="close_status specific-align_center specific-uncomplete" title="エラー勤務です。">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type specific-uncomplete" title="エラー勤務です。"  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord specific-uncomplete"  title="エラー勤務です。"  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord specific-uncomplete"  title="エラー勤務です。"  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right specific-uncomplete" title="エラー勤務です。"   data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left specific-uncomplete"  title="エラー勤務です。"  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345619">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345619">スケジュール申請</option>
+<option value="#button_05_overtime_120012345619">時間外勤務申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05120012345619" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_19_1')">
+<button id="button_05120012345619" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345619');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_19" id="request_one_day_schedule_flag_19_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200819">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="19">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000009092054">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345619" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_19_2')">
+<button id="button_05_schdule_120012345619" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345619');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_19" id="request_one_day_schedule_flag_19_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200819">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="19">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000009092054">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="16" id="action_05_overtime_120012345619" style="display: none;" onClick="setRequestType(4, 'request_one_day_schedule_flag_19_4')">
+<button id="button_05_overtime_120012345619" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_overtime_120012345619');">
+<span>時間外勤務申請</span>
+</button>
+<input name="request_one_day_schedule_flag_19" id="request_one_day_schedule_flag_19_4" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200819">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="19">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000009092054">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/19（水）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#cc0000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+夏季休暇
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345620">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345620">スケジュール申請</option>
+<option value="#button_05_overtime_120012345620">時間外勤務申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05120012345620" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_20_1')">
+<button id="button_05120012345620" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345620');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_20" id="request_one_day_schedule_flag_20_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200820">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="20">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000009268699">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345620" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_20_2')">
+<button id="button_05_schdule_120012345620" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345620');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_20" id="request_one_day_schedule_flag_20_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200820">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="20">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000009268699">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="16" id="action_05_overtime_120012345620" style="display: none;" onClick="setRequestType(4, 'request_one_day_schedule_flag_20_4')">
+<button id="button_05_overtime_120012345620" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_overtime_120012345620');">
+<span>時間外勤務申請</span>
+</button>
+<input name="request_one_day_schedule_flag_20" id="request_one_day_schedule_flag_20_4" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200820">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="20">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000009268699">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/20（木）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#cc0000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+夏季休暇
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345621">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345621">スケジュール申請</option>
+<option value="#button_05_overtime_120012345621">時間外勤務申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05120012345621" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_21_1')">
+<button id="button_05120012345621" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345621');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_21" id="request_one_day_schedule_flag_21_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200821">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="21">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000009591082">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345621" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_21_2')">
+<button id="button_05_schdule_120012345621" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345621');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_21" id="request_one_day_schedule_flag_21_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200821">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="21">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000009591082">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="16" id="action_05_overtime_120012345621" style="display: none;" onClick="setRequestType(4, 'request_one_day_schedule_flag_21_4')">
+<button id="button_05_overtime_120012345621" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_overtime_120012345621');">
+<span>時間外勤務申請</span>
+</button>
+<input name="request_one_day_schedule_flag_21" id="request_one_day_schedule_flag_21_4" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200821">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="21">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000009591082">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/21（金）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#cc0000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+夏季休暇
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+<span class="specific-requested">[申]</span>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+09:34<br>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+<span class="specific-requested">[申]</span>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+20:15<br>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345622">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345622">スケジュール申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05120012345622" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_22_1')">
+<button id="button_05120012345622" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345622');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_22" id="request_one_day_schedule_flag_22_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200822">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="22">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000009888394">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345622" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_22_2')">
+<button id="button_05_schdule_120012345622" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345622');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_22" id="request_one_day_schedule_flag_22_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200822">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="22">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000009888394">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day htBlock-scrollTable_saturday " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/22（土）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#;;background:#;"   data-ht-sort-index="SCHEDULE" >
+<p>
+--
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+法定外休日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr  class="htBlock-vrCalendarTable_weekstart" >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345623">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345623">スケジュール申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05120012345623" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_23_1')">
+<button id="button_05120012345623" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345623');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_23" id="request_one_day_schedule_flag_23_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200823">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="23">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000010163690">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345623" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_23_2')">
+<button id="button_05_schdule_120012345623" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345623');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_23" id="request_one_day_schedule_flag_23_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200823">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="23">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000010163690">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day htBlock-scrollTable_sunday " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/23（日）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#;;background:#;"   data-ht-sort-index="SCHEDULE" >
+<p>
+--
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+法定休日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345624">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345624">スケジュール申請</option>
+<option value="#button_05_overtime_120012345624">時間外勤務申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05120012345624" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_24_1')">
+<button id="button_05120012345624" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345624');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_24" id="request_one_day_schedule_flag_24_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200824">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="24">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000010361940">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345624" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_24_2')">
+<button id="button_05_schdule_120012345624" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345624');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_24" id="request_one_day_schedule_flag_24_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200824">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="24">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000010361940">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="16" id="action_05_overtime_120012345624" style="display: none;" onClick="setRequestType(4, 'request_one_day_schedule_flag_24_4')">
+<button id="button_05_overtime_120012345624" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_overtime_120012345624');">
+<span>時間外勤務申請</span>
+</button>
+<input name="request_one_day_schedule_flag_24" id="request_one_day_schedule_flag_24_4" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200824">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="24">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000010361940">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/24（月）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#000000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+<span class="specific-requested">[申]</span>
+<span>
+<span class="specific-approved_record_sign">認</span>
+</span>
+09:31<br>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+<span class="specific-requested">[申]</span>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345625">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345625">スケジュール申請</option>
+<option value="#button_05_overtime_120012345625">時間外勤務申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05120012345625" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_25_1')">
+<button id="button_05120012345625" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345625');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_25" id="request_one_day_schedule_flag_25_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200825">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="25">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000010575372">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345625" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_25_2')">
+<button id="button_05_schdule_120012345625" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345625');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_25" id="request_one_day_schedule_flag_25_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200825">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="25">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000010575372">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="16" id="action_05_overtime_120012345625" style="display: none;" onClick="setRequestType(4, 'request_one_day_schedule_flag_25_4')">
+<button id="button_05_overtime_120012345625" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_overtime_120012345625');">
+<span>時間外勤務申請</span>
+</button>
+<input name="request_one_day_schedule_flag_25" id="request_one_day_schedule_flag_25_4" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200825">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="25">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000010575372">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/25（火）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#000000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345626">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345626">スケジュール申請</option>
+<option value="#button_05_overtime_120012345626">時間外勤務申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05120012345626" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_26_1')">
+<button id="button_05120012345626" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345626');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_26" id="request_one_day_schedule_flag_26_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200826">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="26">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000010807509">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345626" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_26_2')">
+<button id="button_05_schdule_120012345626" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345626');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_26" id="request_one_day_schedule_flag_26_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200826">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="26">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000010807509">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="16" id="action_05_overtime_120012345626" style="display: none;" onClick="setRequestType(4, 'request_one_day_schedule_flag_26_4')">
+<button id="button_05_overtime_120012345626" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_overtime_120012345626');">
+<span>時間外勤務申請</span>
+</button>
+<input name="request_one_day_schedule_flag_26" id="request_one_day_schedule_flag_26_4" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200826">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="26">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000010807509">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/26（水）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#000000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345627">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345627">スケジュール申請</option>
+<option value="#button_05_overtime_120012345627">時間外勤務申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05120012345627" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_27_1')">
+<button id="button_05120012345627" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345627');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_27" id="request_one_day_schedule_flag_27_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200827">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="27">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000011012953">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345627" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_27_2')">
+<button id="button_05_schdule_120012345627" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345627');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_27" id="request_one_day_schedule_flag_27_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200827">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="27">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000011012953">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="16" id="action_05_overtime_120012345627" style="display: none;" onClick="setRequestType(4, 'request_one_day_schedule_flag_27_4')">
+<button id="button_05_overtime_120012345627" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_overtime_120012345627');">
+<span>時間外勤務申請</span>
+</button>
+<input name="request_one_day_schedule_flag_27" id="request_one_day_schedule_flag_27_4" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200827">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="27">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000011012953">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/27（木）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#000000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345628">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345628">スケジュール申請</option>
+<option value="#button_05_overtime_120012345628">時間外勤務申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05120012345628" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_28_1')">
+<button id="button_05120012345628" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345628');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_28" id="request_one_day_schedule_flag_28_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200828">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="28">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000011468634">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345628" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_28_2')">
+<button id="button_05_schdule_120012345628" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345628');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_28" id="request_one_day_schedule_flag_28_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200828">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="28">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000011468634">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="16" id="action_05_overtime_120012345628" style="display: none;" onClick="setRequestType(4, 'request_one_day_schedule_flag_28_4')">
+<button id="button_05_overtime_120012345628" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_overtime_120012345628');">
+<span>時間外勤務申請</span>
+</button>
+<input name="request_one_day_schedule_flag_28" id="request_one_day_schedule_flag_28_4" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200828">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="28">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000011468634">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/28（金）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#000000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345629">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345629">スケジュール申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05120012345629" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_29_1')">
+<button id="button_05120012345629" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345629');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_29" id="request_one_day_schedule_flag_29_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200829">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="29">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000011846487">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345629" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_29_2')">
+<button id="button_05_schdule_120012345629" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345629');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_29" id="request_one_day_schedule_flag_29_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200829">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="29">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000011846487">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day htBlock-scrollTable_saturday " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/29（土）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#;;background:#;"   data-ht-sort-index="SCHEDULE" >
+<p>
+--
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+法定外休日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr  class="htBlock-vrCalendarTable_weekstart" >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345630">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345630">スケジュール申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05120012345630" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_30_1')">
+<button id="button_05120012345630" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345630');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_30" id="request_one_day_schedule_flag_30_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200830">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="30">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000012198524">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345630" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_30_2')">
+<button id="button_05_schdule_120012345630" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345630');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_30" id="request_one_day_schedule_flag_30_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200830">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="30">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000012198524">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day htBlock-scrollTable_sunday " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/30（日）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#;;background:#;"   data-ht-sort-index="SCHEDULE" >
+<p>
+--
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+法定休日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+
+  
+<tr >
+<td  class="htBlock-adjastableTableF_actionRow">
+<p>
+<select class="htBlock-selectOther">
+<option value=""></option>
+<option value="#button_05120012345631">
+打刻申請
+</option>
+<option value="#button_05_schdule_120012345631">スケジュール申請</option>
+<option value="#button_05_overtime_120012345631">時間外勤務申請</option>
+</select>
+</p>
+<div style="display:none;">
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05120012345631" style="display: none;" onClick="setRequestType(1, 'request_one_day_schedule_flag_31_1')">
+<button id="button_05120012345631" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05120012345631');">
+<span>打刻申請</span>
+</button>
+<input name="request_one_day_schedule_flag_31" id="request_one_day_schedule_flag_31_1" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200831">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="31">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000012599555">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="2" id="action_05_schdule_120012345631" style="display: none;" onClick="setRequestType(2, 'request_one_day_schedule_flag_31_2')">
+<button id="button_05_schdule_120012345631" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_schdule_120012345631');">
+<span>スケジュール申請</span>
+</button>
+<input name="request_one_day_schedule_flag_31" id="request_one_day_schedule_flag_31_2" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200831">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="31">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000012599555">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+<form action="/admin/xxx" method="post" name="myForm" onsubmit="return ckdbclick()">
+<input name="O5Z4uwCl" type="hidden" value="NQ9xiWUXGbOPbqQA">
+<input name="action_id" type="submit" value="16" id="action_05_overtime_120012345631" style="display: none;" onClick="setRequestType(4, 'request_one_day_schedule_flag_31_4')">
+<button id="button_05_overtime_120012345631" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="onClickActionButton('action_05_overtime_120012345631');">
+<span>時間外勤務申請</span>
+</button>
+<input name="request_one_day_schedule_flag_31" id="request_one_day_schedule_flag_31_4" type="hidden" value="1">
+<input name="working_date" type="hidden" value="20200831">
+<input name="year" type="hidden" value="2020">
+<input name="month" type="hidden" value="08">
+<input name="day" type="hidden" value="31">
+<input name="employee_id" type="hidden" value="1200123456">
+<input name="page_id" type="hidden" value="/working/monthly_individual_working_list_custom">
+<input name="schedule_id" type="hidden" value="90000012599555">
+<input name="selected_section_id" type="hidden" value="$selected_section_id">
+<input name="schedule_section_id" type="hidden"  value="$schedule_section_id">
+</form>
+</div>
+</td>
+<td  class="htBlock-scrollTable_day " title=""  data-ht-sort-index="FULL_DATE" >
+<p>
+08/31（月）
+</p>
+</td>
+<td  class="close_status specific-align_center " title="">
+<p>
+</p>
+</td>
+<td  class="schedule specific-timecard_schedule " title=""  style="color:#000000;;background:#ffffff;"   data-ht-sort-index="SCHEDULE" >
+<p>
+フレックス(休憩1H) .
+</p>
+</td>
+<td  class="work_day_type " title=""  data-ht-sort-index="WORK_DAY_TYPE" >
+<p>
+平日</p>
+</td>
+  
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="START_TIMERECORD" >
+<p>
+</p>
+</td>
+<td class="start_end_timerecord "  title=""  data-ht-sort-index="END_TIMERECORD" >
+<p>
+</p>
+</td>
+  
+  
+<td class="custom1 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_1" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom2 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_2" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom3 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_3" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom4 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_4" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom5 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_5" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom6 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_6" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom7 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_7" >
+<p>
+
+
+
+
+
+</p>
+</td>
+<td class="custom8 specific-align_right " title=""     data-ht-sort-index="CUSTOM_DISPLAY_NAME_8" >
+<p>
+
+
+
+
+
+</p>
+</td>
+  
+<td class="remark specific-timecard_about specific-align_left "  title=""  data-ht-sort-index="REMARK" ><p></p></td>
+</tr>
+  
+  
+  
+</tbody>
+</table>
+</div><!-- end class="htBlock-adjastableTableF_inner" -->
+</div><!-- end class="htBlock-adjastableTableF" -->
+  
+  
+   </div><!-- end  class="htBlock-box specific-box" -->
+</div><!-- end class="htBlock-mainContents" -->
+<div class="htBlock-footer" id="footer_main_menu">
+
+<div class="htBlock-footer_logo">
+<img src="/asset/design1/img/templates/logo/kot/footer.png"  >
+</div>
+</div>
+<script type="text/javascript">
+//名前空間を定義
+KOT_GLOBAL                           = KOT_GLOBAL || {};
+KOT_GLOBAL.Parts                     = KOT_GLOBAL.Parts || {};
+KOT_GLOBAL.Parts.VmFooter            = {};
+(function($, footer){
+})(jQuery, KOT_GLOBAL.Parts.VmFooter);
+</script>
+
+<script>
+jQuery(".htBlock-adjastableTableF").show();
+jQuery(".htBlock-hrCalendarTableA").show();
+</script>
+<script src="/asset/design1/js/vendor/jquery-ui-1.11.4/jquery-ui.min.js?202008181210"></script>
+<!--<script src="/asset/design1/js/htlib.js?202008181210"></script>-->
+<script src="/asset/design1/js/min/htlib.min.js?202008181210"></script>
+<script type="text/javascript">
+(function($){
+$(document).on('keypress', 'input[type="text"]:not(.specific-allow-submit),input[type="password"]:not(.specific-allow-submit),input[type="number"]:not(.specific-allow-submit)', function(event) {
+return event.which !== 13;
+});
+})(jQuery);
+</script>
+
+</div><!-- end htBlock-body -->
+</body>
+</html>

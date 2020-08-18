@@ -19,7 +19,7 @@ def read_input():
     password = getpass("Enter password: ")
     return (username, password)
 
-def setup(headless):
+def set_driver(headless):
     driverOpt = webdriver.ChromeOptions()
     driverOpt.headless = headless
     driver = webdriver.Chrome(options = driverOpt)
@@ -49,7 +49,15 @@ def find_today_row_index(day_rows):
     for r in day_rows:
         day_texts.append(r.find_element_by_tag_name("p").text)
     today_text = utils.generate_today_text()
+
     return day_texts.index(today_text)
+
+def find_day_closed(driver):
+    closed = 0
+    statuses = driver.find_elements_by_class_name("specific-status_close")
+    for status in statuses:
+        closed += 1 if status.get_attribute('alt') == '済' else 0
+    return closed
 
 def find_open_timesheet_form_button_index(today_button_option_elements):
     option_texts = []
@@ -65,7 +73,8 @@ def open_timesheet_form(driver):
 
     day_rows = driver.find_elements_by_class_name("htBlock-scrollTable_day")
     today_row_index = find_today_row_index(day_rows)
-    today_button = driver.find_elements_by_class_name("htBlock-selectOther")[today_row_index]
+    day_closed = find_day_closed(driver)
+    today_button = driver.find_elements_by_class_name("htBlock-selectOther")[today_row_index - day_closed]
     today_button_option_elements = today_button.find_elements_by_tag_name("option")
     timesheet_form_option_index = find_open_timesheet_form_button_index(today_button_option_elements)
     timesheet_form_button = today_button_option_elements[timesheet_form_option_index]
@@ -182,7 +191,7 @@ def main(argv):
     if (not(username) or not(password)):
         username, password = read_input()
 
-    driver = setup(headless)
+    driver = set_driver(headless)
     try:
         login(driver, username, password)
         open_timesheet_form(driver)
