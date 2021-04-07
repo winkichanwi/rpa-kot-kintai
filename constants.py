@@ -1,3 +1,5 @@
+# coding=utf-8
+
 WEEKDAY_TXTS = {
     "0": "日",
     "1": "月",

@@ -146,7 +146,7 @@ def enter_records(driver, record_type_menu_elements, records, message):
     for i in range(len(record_type_menu_elements)):
         select = Select(record_type_menu_elements[i])
         record_type_select_elements.append(select)
-        if select.first_selected_option.text == " --選択してください-- ":
+        if select.first_selected_option.text == "--選択してください--":
             available_row_index.append(i)
     time_input_elements = driver.find_elements_by_class_name(
         "recording_timestamp_time")
@@ -160,8 +160,12 @@ def enter_records(driver, record_type_menu_elements, records, message):
         # input time
         time_input_elements[row_index].send_keys(time_text)
         message_input_elements[row_index].send_keys(message)
-        print("Entered " + record_type.value + " at " +
+        if len(message) > 0:
+            print("Entered " + record_type.value + " at " +
               time_text + ", message: " + message + ".")
+        else:
+            print("Entered " + record_type.value + " at " +
+              time_text + ".")
         i += 1
     return
 

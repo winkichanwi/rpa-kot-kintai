@@ -1,3 +1,5 @@
+# coding=utf-8
+
 import sys
 import getopt
 from datetime import datetime
